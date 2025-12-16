@@ -42,6 +42,13 @@ const Register = () => {
     })
   }
 
+  const handleGoogleSignup = () => {
+    // For now, show alert. In production, integrate with Google OAuth
+    alert('Google signup will be available soon! Please use email registration for now.')
+    // TODO: Implement Google OAuth integration
+    // window.location.href = '/auth/google'
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -223,7 +230,11 @@ const Register = () => {
 
           {/* Social Login */}
           <div className="mt-6">
-            <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
+            <button 
+              type="button"
+              onClick={handleGoogleSignup}
+              className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors"
+            >
               <span className="mr-2">📧</span>
               Continue with Google
             </button>
