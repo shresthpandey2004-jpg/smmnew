@@ -104,6 +104,56 @@ const NewOrderForm = () => {
         description: 'Instagram Followers - Lifetime Guarantee',
         speed: 'Slow (24-72 hours)',
         retention: 'Lifetime Refill'
+      },
+      { 
+        id: 10, 
+        name: 'Instagram » Followers [TOP QUALITY]', 
+        rate: 12.00, 
+        min: 25, 
+        max: 15000, 
+        description: 'Top Quality Instagram Followers - Premium Service',
+        speed: 'Slow (24-72 hours)',
+        retention: 'Lifetime Refill'
+      },
+      { 
+        id: 11, 
+        name: 'Instagram » Followers [Indians]', 
+        rate: 6.50, 
+        min: 50, 
+        max: 20000, 
+        description: 'Instagram Followers from Indian Users Only',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 12, 
+        name: 'Instagram » Story Views', 
+        rate: 0.60, 
+        min: 100, 
+        max: 50000, 
+        description: 'Instagram Story Views - High Quality',
+        speed: 'Fast (0-1 hours)',
+        retention: '7 Days Refill'
+      },
+      { 
+        id: 13, 
+        name: 'Instagram » Comments', 
+        rate: 15.00, 
+        min: 5, 
+        max: 5000, 
+        description: 'Custom Instagram Comments from Real Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 14, 
+        name: 'Instagram » Live Stream', 
+        rate: 25.00, 
+        min: 10, 
+        max: 1000, 
+        description: 'Instagram Live Stream Viewers',
+        speed: 'Instant',
+        retention: 'No Refill'
       }
     ],
     tiktok: [
