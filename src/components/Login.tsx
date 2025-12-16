@@ -156,14 +156,10 @@ const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
           </div>
 
           {/* Social Login */}
-          <div className="mt-6 grid grid-cols-2 gap-3">
+          <div className="mt-6">
             <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
               <span className="mr-2">📧</span>
-              Google
-            </button>
-            <button className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
-              <span className="mr-2">👥</span>
-              Facebook
+              Continue with Google
             </button>
           </div>
 
