@@ -6,6 +6,277 @@ import {
   Clock, CheckCircle, AlertCircle, RefreshCw
 } from 'lucide-react'
 
+const NewOrderForm = () => {
+  const [selectedCategory, setSelectedCategory] = useState('')
+  const [selectedService, setSelectedService] = useState('')
+  const [link, setLink] = useState('')
+  const [quantity, setQuantity] = useState('')
+  const [totalCost, setTotalCost] = useState(0)
+
+  const services = {
+    instagram: [
+      { 
+        id: 1, 
+        name: 'Instagram Followers [Real - Fast]', 
+        rate: 2.50, 
+        min: 50, 
+        max: 50000, 
+        description: 'High Quality Real Active Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 2, 
+        name: 'Instagram Likes [Premium Quality]', 
+        rate: 1.20, 
+        min: 100, 
+        max: 100000, 
+        description: 'Premium Quality Likes from Real Users',
+        speed: 'Instant',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 3, 
+        name: 'Instagram Views [High Retention]', 
+        rate: 0.80, 
+        min: 1000, 
+        max: 1000000, 
+        description: 'High Retention Video Views',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
+      }
+    ],
+    tiktok: [
+      { 
+        id: 4, 
+        name: 'TikTok Followers [Real Users]', 
+        rate: 4.00, 
+        min: 100, 
+        max: 25000, 
+        description: 'Real Active TikTok Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 5, 
+        name: 'TikTok Likes [High Quality]', 
+        rate: 1.50, 
+        min: 100, 
+        max: 500000, 
+        description: 'High Quality Likes from Real Accounts',
+        speed: 'Instant',
+        retention: '90 Days Refill'
+      }
+    ],
+    youtube: [
+      { 
+        id: 6, 
+        name: 'YouTube Subscribers [Real]', 
+        rate: 25.00, 
+        min: 50, 
+        max: 10000, 
+        description: 'Real YouTube Subscribers',
+        speed: 'Slow (24-72 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 7, 
+        name: 'YouTube Views [High Retention]', 
+        rate: 3.50, 
+        min: 1000, 
+        max: 1000000, 
+        description: 'High Retention YouTube Views',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      }
+    ]
+  }
+
+  const calculateCost = (qty: string, rate: number) => {
+    const numQty = parseInt(qty) || 0
+    const cost = (numQty * rate) / 1000
+    setTotalCost(cost)
+  }
+
+  const handleQuantityChange = (value: string) => {
+    setQuantity(value)
+    if (selectedService) {
+      const service = Object.values(services).flat().find(s => s.id.toString() === selectedService)
+      if (service) {
+        calculateCost(value, service.rate)
+      }
+    }
+  }
+
+  const handleServiceChange = (serviceId: string) => {
+    setSelectedService(serviceId)
+    if (quantity) {
+      const service = Object.values(services).flat().find(s => s.id.toString() === serviceId)
+      if (service) {
+        calculateCost(quantity, service.rate)
+      }
+    }
+  }
+
+  const selectedServiceData = selectedService ? 
+    Object.values(services).flat().find(s => s.id.toString() === selectedService) : null
+
+  return (
+    <div className="space-y-6">
+      {/* Order Form */}
+      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Place New Order</h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Form Fields */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                <select 
+                  value={selectedCategory}
+                  onChange={(e) => {
+                    setSelectedCategory(e.target.value)
+                    setSelectedService('')
+                    setTotalCost(0)
+                  }}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                >
+                  <option value="">Select Category</option>
+                  <option value="instagram">📷 Instagram</option>
+                  <option value="tiktok">🎵 TikTok</option>
+                  <option value="youtube">📺 YouTube</option>
+                  <option value="facebook">👥 Facebook</option>
+                  <option value="twitter">🐦 Twitter</option>
+                  <option value="linkedin">💼 LinkedIn</option>
+                </select>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Service</label>
+                <select 
+                  value={selectedService}
+                  onChange={(e) => handleServiceChange(e.target.value)}
+                  disabled={!selectedCategory}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled:bg-gray-100"
+                >
+                  <option value="">Select Service</option>
+                  {selectedCategory && services[selectedCategory as keyof typeof services]?.map(service => (
+                    <option key={service.id} value={service.id}>
+                      {service.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Link</label>
+              <input 
+                type="url" 
+                value={link}
+                onChange={(e) => setLink(e.target.value)}
+                placeholder="Enter your profile/post URL"
+                className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
+                <input 
+                  type="number" 
+                  value={quantity}
+                  onChange={(e) => handleQuantityChange(e.target.value)}
+                  placeholder="Enter quantity"
+                  min={selectedServiceData?.min || 1}
+                  max={selectedServiceData?.max || 1000000}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+                {selectedServiceData && (
+                  <p className="text-xs text-gray-500 mt-1">
+                    Min: {selectedServiceData.min.toLocaleString()} - Max: {selectedServiceData.max.toLocaleString()}
+                  </p>
+                )}
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Total Cost</label>
+                <div className="w-full px-3 py-3 bg-purple-50 border border-purple-200 rounded-lg text-purple-700 font-semibold text-lg">
+                  ₹{totalCost.toFixed(2)}
+                </div>
+              </div>
+            </div>
+
+            <button 
+              disabled={!selectedService || !link || !quantity}
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Place Order
+            </button>
+          </div>
+
+          {/* Service Details */}
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Service Details</h3>
+            
+            {selectedServiceData ? (
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">{selectedServiceData.name}</h4>
+                  <p className="text-sm text-gray-600">{selectedServiceData.description}</p>
+                </div>
+                
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Rate:</span>
+                    <span className="text-sm font-medium">₹{selectedServiceData.rate}/1000</span>
+                  </div>
+                  
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Speed:</span>
+                    <span className="text-sm font-medium text-green-600">{selectedServiceData.speed}</span>
+                  </div>
+                  
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Refill:</span>
+                    <span className="text-sm font-medium text-blue-600">{selectedServiceData.retention}</span>
+                  </div>
+                  
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Min Order:</span>
+                    <span className="text-sm font-medium">{selectedServiceData.min.toLocaleString()}</span>
+                  </div>
+                  
+                  <div className="flex justify-between">
+                    <span className="text-sm text-gray-600">Max Order:</span>
+                    <span className="text-sm font-medium">{selectedServiceData.max.toLocaleString()}</span>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                  <h5 className="font-medium text-blue-900 mb-2">Important Notes:</h5>
+                  <ul className="text-xs text-blue-800 space-y-1">
+                    <li>• Profile must be public</li>
+                    <li>• No password required</li>
+                    <li>• 100% safe and secure</li>
+                    <li>• 24/7 customer support</li>
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <div className="text-4xl mb-4">📋</div>
+                <p className="text-gray-500">Select a service to view details</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -195,60 +466,7 @@ const Dashboard = () => {
       
       case 'new-order':
         return (
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Place New Order</h2>
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Platform</label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    <option>Select Platform</option>
-                    <option>Instagram</option>
-                    <option>TikTok</option>
-                    <option>YouTube</option>
-                    <option>Facebook</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Service</label>
-                  <select className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    <option>Select Service</option>
-                    <option>Followers</option>
-                    <option>Likes</option>
-                    <option>Views</option>
-                    <option>Comments</option>
-                  </select>
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Link</label>
-                <input 
-                  type="url" 
-                  placeholder="Enter your profile/post URL"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
-                  <input 
-                    type="number" 
-                    placeholder="Enter quantity"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Total Cost</label>
-                  <div className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-gray-700">
-                    ₹0.00
-                  </div>
-                </div>
-              </div>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium">
-                Place Order
-              </button>
-            </div>
-          </div>
+          <NewOrderForm />
         )
       
       default:
