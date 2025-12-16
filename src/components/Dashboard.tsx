@@ -271,13 +271,13 @@ const Dashboard = () => {
       )}
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0`}>
-        <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
+      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 flex flex-col`}>
+        <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200 flex-shrink-0">
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold gradient-text">SocialBoost Pro</span>
+            <span className="text-lg font-bold gradient-text">SocialBoost Pro</span>
           </Link>
           <button 
             className="lg:hidden"
@@ -287,14 +287,14 @@ const Dashboard = () => {
           </button>
         </div>
 
-        <nav className="mt-6 px-3">
+        <nav className="flex-1 mt-6 px-3 pb-4 overflow-y-auto">
           {sidebarItems.map((item) => {
             const IconComponent = item.icon
             return (
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors mb-1 ${
+                className={`w-full flex items-center space-x-3 px-3 py-3 rounded-lg text-left transition-colors mb-2 ${
                   activeTab === item.id
                     ? 'bg-purple-100 text-purple-700'
                     : 'text-gray-700 hover:bg-gray-100'
@@ -307,8 +307,8 @@ const Dashboard = () => {
           })}
         </nav>
 
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
-          <button className="w-full flex items-center space-x-3 px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+        <div className="flex-shrink-0 p-4 border-t border-gray-200">
+          <button className="w-full flex items-center space-x-3 px-3 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
             <LogOut className="w-5 h-5" />
             <span>Logout</span>
           </button>
@@ -316,10 +316,10 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="lg:ml-64">
+      <div className="lg:ml-64 flex flex-col min-h-screen">
         {/* Top Header */}
-        <header className="bg-white shadow-sm border-b border-gray-200">
-          <div className="flex items-center justify-between h-16 px-6">
+        <header className="bg-white shadow-sm border-b border-gray-200 flex-shrink-0">
+          <div className="flex items-center justify-between h-16 px-4 lg:px-6">
             <div className="flex items-center space-x-4">
               <button 
                 className="lg:hidden"
@@ -333,12 +333,12 @@ const Dashboard = () => {
             </div>
 
             <div className="flex items-center space-x-4">
-              <div className="relative">
+              <div className="relative hidden sm:block">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input 
                   type="text" 
                   placeholder="Search..."
-                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 w-64"
+                  className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 w-48 lg:w-64"
                 />
               </div>
               <button className="relative p-2 text-gray-400 hover:text-gray-600">
@@ -359,7 +359,7 @@ const Dashboard = () => {
         </header>
 
         {/* Page Content */}
-        <main className="p-6">
+        <main className="flex-1 p-4 lg:p-6">
           {renderDashboardContent()}
         </main>
       </div>
