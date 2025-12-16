@@ -17,33 +17,93 @@ const NewOrderForm = () => {
     instagram: [
       { 
         id: 1, 
-        name: 'Instagram Followers [Real - Fast]', 
-        rate: 2.50, 
-        min: 50, 
-        max: 50000, 
-        description: 'High Quality Real Active Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
+        name: 'Instagram » Real Views', 
+        rate: 0.80, 
+        min: 100, 
+        max: 100000, 
+        description: 'Real Instagram Views - High Quality',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
       },
       { 
         id: 2, 
-        name: 'Instagram Likes [Premium Quality]', 
+        name: 'Instagram » Real Views [Indians]', 
         rate: 1.20, 
         min: 100, 
+        max: 50000, 
+        description: 'Real Instagram Views from Indian Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '30 Days Refill'
+      },
+      { 
+        id: 3, 
+        name: 'Instagram » Likes', 
+        rate: 1.50, 
+        min: 50, 
         max: 100000, 
-        description: 'Premium Quality Likes from Real Users',
+        description: 'High Quality Instagram Likes',
         speed: 'Instant',
         retention: '90 Days Refill'
       },
       { 
-        id: 3, 
-        name: 'Instagram Views [High Retention]', 
-        rate: 0.80, 
-        min: 1000, 
-        max: 1000000, 
-        description: 'High Retention Video Views',
-        speed: 'Fast (0-1 hours)',
+        id: 4, 
+        name: 'Instagram » Likes [Indians]', 
+        rate: 2.00, 
+        min: 50, 
+        max: 50000, 
+        description: 'Instagram Likes from Indian Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 5, 
+        name: 'Instagram » Statistics', 
+        rate: 5.00, 
+        min: 1, 
+        max: 1000, 
+        description: 'Instagram Account Statistics Analysis',
+        speed: 'Instant',
+        retention: 'No Refill'
+      },
+      { 
+        id: 6, 
+        name: 'Instagram » Shares » Repost', 
+        rate: 3.50, 
+        min: 10, 
+        max: 10000, 
+        description: 'Instagram Post Shares and Reposts',
+        speed: 'Fast (1-6 hours)',
         retention: '30 Days Refill'
+      },
+      { 
+        id: 7, 
+        name: 'Instagram » Followers [No Refill]', 
+        rate: 1.80, 
+        min: 100, 
+        max: 100000, 
+        description: 'Instagram Followers - No Refill Guarantee',
+        speed: 'Fast (1-6 hours)',
+        retention: 'No Refill'
+      },
+      { 
+        id: 8, 
+        name: 'Instagram » Followers [100% Refill]', 
+        rate: 4.50, 
+        min: 100, 
+        max: 50000, 
+        description: 'Instagram Followers with 100% Refill Guarantee',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 9, 
+        name: 'Instagram » Followers [Lifetime]', 
+        rate: 8.00, 
+        min: 50, 
+        max: 25000, 
+        description: 'Instagram Followers - Lifetime Guarantee',
+        speed: 'Slow (24-72 hours)',
+        retention: 'Lifetime Refill'
       }
     ],
     tiktok: [
