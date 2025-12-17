@@ -30,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, setIsLoggedIn }) => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-purple-600 transition-colors">Home</Link>
+            <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
             <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
             <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">Customers</a>
             <a href="#how-it-works" className="text-gray-700 hover:text-purple-600 transition-colors">How It Works</a>
