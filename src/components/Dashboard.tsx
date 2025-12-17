@@ -175,327 +175,373 @@ const NewOrderForm = () => {
           retention: 'No Refill'
         }
       ]
-    ],
-    tiktok: [
-      { 
-        id: 15, 
-        name: 'TikTok » Followers', 
-        rate: 4.50, 
-        min: 100, 
-        max: 50000, 
-        description: 'High Quality TikTok Followers',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 16, 
-        name: 'TikTok » Likes', 
-        rate: 1.20, 
-        min: 50, 
-        max: 500000, 
-        description: 'TikTok Likes from Real Users',
-        speed: 'Instant',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 17, 
-        name: 'TikTok » Views', 
-        rate: 0.30, 
-        min: 1000, 
-        max: 10000000, 
-        description: 'TikTok Video Views - High Quality',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      }
-    ],
-    youtube: [
-      { 
-        id: 18, 
-        name: 'YouTube » Subscribers [No Refill]', 
-        rate: 15.00, 
-        min: 50, 
-        max: 10000, 
-        description: 'YouTube Subscribers - No Refill Guarantee',
-        speed: 'Slow (24-72 hours)',
-        retention: 'No Refill'
-      },
-      { 
-        id: 19, 
-        name: 'YouTube » Subscribers [Guaranteed]', 
-        rate: 25.00, 
-        min: 50, 
-        max: 5000, 
-        description: 'YouTube Subscribers with Lifetime Guarantee',
-        speed: 'Slow (24-72 hours)',
-        retention: 'Lifetime Refill'
-      },
-      { 
-        id: 20, 
-        name: 'YouTube » Short/Video Views', 
-        rate: 2.50, 
-        min: 1000, 
-        max: 1000000, 
-        description: 'YouTube Shorts and Video Views - High Quality',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 21, 
-        name: 'YouTube » Likes', 
-        rate: 8.00, 
-        min: 100, 
-        max: 100000, 
-        description: 'YouTube Video Likes from Real Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 22, 
-        name: 'YouTube » Comments', 
-        rate: 20.00, 
-        min: 10, 
-        max: 5000, 
-        description: 'Custom YouTube Comments from Real Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 23, 
-        name: 'YouTube » Watch-Time', 
-        rate: 12.00, 
-        min: 100, 
-        max: 50000, 
-        description: 'YouTube Watch Time Hours - Boost Monetization',
-        speed: 'Slow (24-72 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 24, 
-        name: 'YouTube » [Indian Services]', 
-        rate: 18.00, 
-        min: 50, 
-        max: 20000, 
-        description: 'YouTube Services from Indian Users Only',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      }
-    ],
-    facebook: [
-      { 
-        id: 25, 
-        name: 'Facebook » Followers', 
-        rate: 3.50, 
-        min: 100, 
-        max: 50000, 
-        description: 'High Quality Facebook Page Followers',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 26, 
-        name: 'Facebook » Likes', 
-        rate: 2.00, 
-        min: 50, 
-        max: 100000, 
-        description: 'Facebook Post Likes from Real Users',
-        speed: 'Fast (0-1 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 27, 
-        name: 'Facebook » Reel/Video Views', 
-        rate: 1.50, 
-        min: 1000, 
-        max: 1000000, 
-        description: 'Facebook Reel and Video Views - High Quality',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 28, 
-        name: 'Facebook » Others', 
-        rate: 4.00, 
-        min: 10, 
-        max: 10000, 
-        description: 'Facebook Other Services (Comments, Shares, etc.)',
-        speed: 'Fast (1-6 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 29, 
-        name: 'Facebook » Live Stream', 
-        rate: 20.00, 
-        min: 10, 
-        max: 1000, 
-        description: 'Facebook Live Stream Viewers',
-        speed: 'Instant',
-        retention: 'No Refill'
-      },
-      { 
-        id: 30, 
-        name: 'Facebook » Monetization Package', 
-        rate: 50.00, 
-        min: 1, 
-        max: 100, 
-        description: 'Complete Facebook Page Monetization Setup',
-        speed: 'Slow (24-72 hours)',
-        retention: 'Lifetime Guarantee'
-      }
-    ],
-    telegram: [
-      { 
-        id: 31, 
-        name: 'Telegram » Channel Members', 
-        rate: 2.50, 
-        min: 100, 
-        max: 100000, 
-        description: 'High Quality Telegram Channel Members',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 32, 
-        name: 'Telegram » Group Members', 
-        rate: 3.00, 
-        min: 50, 
-        max: 50000, 
-        description: 'Active Telegram Group Members',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 33, 
-        name: 'Telegram » Post Views', 
-        rate: 0.80, 
-        min: 1000, 
-        max: 1000000, 
-        description: 'Telegram Channel Post Views - High Quality',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 34, 
-        name: 'Telegram » Reactions', 
-        rate: 1.50, 
-        min: 100, 
-        max: 50000, 
-        description: 'Telegram Post Reactions (👍❤️🔥)',
-        speed: 'Fast (0-1 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 35, 
-        name: 'Telegram » Comments', 
-        rate: 8.00, 
-        min: 10, 
-        max: 5000, 
-        description: 'Custom Telegram Comments from Real Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      }
-    ],
-    twitter: [
-      { 
-        id: 36, 
-        name: 'Twitter » Followers', 
-        rate: 5.00, 
-        min: 100, 
-        max: 100000, 
-        description: 'High Quality Twitter Followers',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 37, 
-        name: 'Twitter » Followers [Premium]', 
-        rate: 12.00, 
-        min: 50, 
-        max: 50000, 
-        description: 'Premium Twitter Followers - Top Quality',
-        speed: 'Slow (24-72 hours)',
-        retention: 'Lifetime Refill'
-      },
-      { 
-        id: 38, 
-        name: 'Twitter » Likes', 
-        rate: 2.50, 
-        min: 50, 
-        max: 500000, 
-        description: 'Twitter Tweet Likes from Real Users',
-        speed: 'Fast (0-1 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 39, 
-        name: 'Twitter » Retweets', 
-        rate: 4.00, 
-        min: 25, 
-        max: 100000, 
-        description: 'Twitter Retweets - Boost Engagement',
-        speed: 'Fast (1-6 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 40, 
-        name: 'Twitter » Views', 
-        rate: 0.50, 
-        min: 1000, 
-        max: 10000000, 
-        description: 'Twitter Tweet Views - High Quality',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 41, 
-        name: 'Twitter » Comments/Replies', 
-        rate: 15.00, 
-        min: 5, 
-        max: 5000, 
-        description: 'Custom Twitter Comments and Replies',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 42, 
-        name: 'Twitter » Bookmarks', 
-        rate: 3.50, 
-        min: 50, 
-        max: 50000, 
-        description: 'Twitter Tweet Bookmarks',
-        speed: 'Fast (1-6 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 43, 
-        name: 'Twitter » Spaces Listeners', 
-        rate: 8.00, 
-        min: 10, 
-        max: 5000, 
-        description: 'Twitter Spaces Live Listeners',
-        speed: 'Instant',
-        retention: 'No Refill'
-      },
-      { 
-        id: 44, 
-        name: 'Twitter » Profile Visits', 
-        rate: 1.20, 
-        min: 1000, 
-        max: 1000000, 
-        description: 'Twitter Profile Visits - Boost Visibility',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 45, 
-        name: 'Twitter » Impressions', 
-        rate: 0.30, 
-        min: 10000, 
-        max: 10000000, 
-        description: 'Twitter Tweet Impressions - Massive Reach',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      }
-    ]
+    },
+    tiktok: {
+      followers: [
+        { 
+          id: 15, 
+          name: 'TikTok » Followers', 
+          rate: 4.50, 
+          min: 100, 
+          max: 50000, 
+          description: 'High Quality TikTok Followers',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      likes: [
+        { 
+          id: 16, 
+          name: 'TikTok » Likes', 
+          rate: 1.20, 
+          min: 50, 
+          max: 500000, 
+          description: 'TikTok Likes from Real Users',
+          speed: 'Instant',
+          retention: '90 Days Refill'
+        }
+      ],
+      views: [
+        { 
+          id: 17, 
+          name: 'TikTok » Views', 
+          rate: 0.30, 
+          min: 1000, 
+          max: 10000000, 
+          description: 'TikTok Video Views - High Quality',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        }
+      ]
+    },
+    youtube: {
+      subscribers: [
+        { 
+          id: 18, 
+          name: 'YouTube » Subscribers [No Refill]', 
+          rate: 15.00, 
+          min: 50, 
+          max: 10000, 
+          description: 'YouTube Subscribers - No Refill Guarantee',
+          speed: 'Slow (24-72 hours)',
+          retention: 'No Refill'
+        },
+        { 
+          id: 19, 
+          name: 'YouTube » Subscribers [Guaranteed]', 
+          rate: 25.00, 
+          min: 50, 
+          max: 5000, 
+          description: 'YouTube Subscribers with Lifetime Guarantee',
+          speed: 'Slow (24-72 hours)',
+          retention: 'Lifetime Refill'
+        }
+      ],
+      views: [
+        { 
+          id: 20, 
+          name: 'YouTube » Short/Video Views', 
+          rate: 2.50, 
+          min: 1000, 
+          max: 1000000, 
+          description: 'YouTube Shorts and Video Views - High Quality',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      likes: [
+        { 
+          id: 21, 
+          name: 'YouTube » Likes', 
+          rate: 8.00, 
+          min: 100, 
+          max: 100000, 
+          description: 'YouTube Video Likes from Real Users',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      comments: [
+        { 
+          id: 22, 
+          name: 'YouTube » Comments', 
+          rate: 20.00, 
+          min: 10, 
+          max: 5000, 
+          description: 'Custom YouTube Comments from Real Users',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      'watch-time': [
+        { 
+          id: 23, 
+          name: 'YouTube » Watch-Time', 
+          rate: 12.00, 
+          min: 100, 
+          max: 50000, 
+          description: 'YouTube Watch Time Hours - Boost Monetization',
+          speed: 'Slow (24-72 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      others: [
+        { 
+          id: 24, 
+          name: 'YouTube » [Indian Services]', 
+          rate: 18.00, 
+          min: 50, 
+          max: 20000, 
+          description: 'YouTube Services from Indian Users Only',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ]
+    },
+    facebook: {
+      followers: [
+        { 
+          id: 25, 
+          name: 'Facebook » Followers', 
+          rate: 3.50, 
+          min: 100, 
+          max: 50000, 
+          description: 'High Quality Facebook Page Followers',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      likes: [
+        { 
+          id: 26, 
+          name: 'Facebook » Likes', 
+          rate: 2.00, 
+          min: 50, 
+          max: 100000, 
+          description: 'Facebook Post Likes from Real Users',
+          speed: 'Fast (0-1 hours)',
+          retention: '90 Days Refill'
+        }
+      ],
+      views: [
+        { 
+          id: 27, 
+          name: 'Facebook » Reel/Video Views', 
+          rate: 1.50, 
+          min: 1000, 
+          max: 1000000, 
+          description: 'Facebook Reel and Video Views - High Quality',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        }
+      ],
+      'live stream': [
+        { 
+          id: 29, 
+          name: 'Facebook » Live Stream', 
+          rate: 20.00, 
+          min: 10, 
+          max: 1000, 
+          description: 'Facebook Live Stream Viewers',
+          speed: 'Instant',
+          retention: 'No Refill'
+        }
+      ],
+      others: [
+        { 
+          id: 28, 
+          name: 'Facebook » Others', 
+          rate: 4.00, 
+          min: 10, 
+          max: 10000, 
+          description: 'Facebook Other Services (Comments, Shares, etc.)',
+          speed: 'Fast (1-6 hours)',
+          retention: '90 Days Refill'
+        },
+        { 
+          id: 30, 
+          name: 'Facebook » Monetization Package', 
+          rate: 50.00, 
+          min: 1, 
+          max: 100, 
+          description: 'Complete Facebook Page Monetization Setup',
+          speed: 'Slow (24-72 hours)',
+          retention: 'Lifetime Guarantee'
+        }
+      ]
+    },
+    telegram: {
+      members: [
+        { 
+          id: 31, 
+          name: 'Telegram » Channel Members', 
+          rate: 2.50, 
+          min: 100, 
+          max: 100000, 
+          description: 'High Quality Telegram Channel Members',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        },
+        { 
+          id: 32, 
+          name: 'Telegram » Group Members', 
+          rate: 3.00, 
+          min: 50, 
+          max: 50000, 
+          description: 'Active Telegram Group Members',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      views: [
+        { 
+          id: 33, 
+          name: 'Telegram » Post Views', 
+          rate: 0.80, 
+          min: 1000, 
+          max: 1000000, 
+          description: 'Telegram Channel Post Views - High Quality',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        }
+      ],
+      reactions: [
+        { 
+          id: 34, 
+          name: 'Telegram » Reactions', 
+          rate: 1.50, 
+          min: 100, 
+          max: 50000, 
+          description: 'Telegram Post Reactions (👍❤️🔥)',
+          speed: 'Fast (0-1 hours)',
+          retention: '90 Days Refill'
+        }
+      ],
+      comments: [
+        { 
+          id: 35, 
+          name: 'Telegram » Comments', 
+          rate: 8.00, 
+          min: 10, 
+          max: 5000, 
+          description: 'Custom Telegram Comments from Real Users',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ]
+    },
+    twitter: {
+      followers: [
+        { 
+          id: 36, 
+          name: 'Twitter » Followers', 
+          rate: 5.00, 
+          min: 100, 
+          max: 100000, 
+          description: 'High Quality Twitter Followers',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        },
+        { 
+          id: 37, 
+          name: 'Twitter » Followers [Premium]', 
+          rate: 12.00, 
+          min: 50, 
+          max: 50000, 
+          description: 'Premium Twitter Followers - Top Quality',
+          speed: 'Slow (24-72 hours)',
+          retention: 'Lifetime Refill'
+        }
+      ],
+      likes: [
+        { 
+          id: 38, 
+          name: 'Twitter » Likes', 
+          rate: 2.50, 
+          min: 50, 
+          max: 500000, 
+          description: 'Twitter Tweet Likes from Real Users',
+          speed: 'Fast (0-1 hours)',
+          retention: '90 Days Refill'
+        }
+      ],
+      retweets: [
+        { 
+          id: 39, 
+          name: 'Twitter » Retweets', 
+          rate: 4.00, 
+          min: 25, 
+          max: 100000, 
+          description: 'Twitter Retweets - Boost Engagement',
+          speed: 'Fast (1-6 hours)',
+          retention: '90 Days Refill'
+        }
+      ],
+      views: [
+        { 
+          id: 40, 
+          name: 'Twitter » Views', 
+          rate: 0.50, 
+          min: 1000, 
+          max: 10000000, 
+          description: 'Twitter Tweet Views - High Quality',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        }
+      ],
+      others: [
+        { 
+          id: 41, 
+          name: 'Twitter » Comments/Replies', 
+          rate: 15.00, 
+          min: 5, 
+          max: 5000, 
+          description: 'Custom Twitter Comments and Replies',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        },
+        { 
+          id: 42, 
+          name: 'Twitter » Bookmarks', 
+          rate: 3.50, 
+          min: 50, 
+          max: 50000, 
+          description: 'Twitter Tweet Bookmarks',
+          speed: 'Fast (1-6 hours)',
+          retention: '90 Days Refill'
+        },
+        { 
+          id: 43, 
+          name: 'Twitter » Spaces Listeners', 
+          rate: 8.00, 
+          min: 10, 
+          max: 5000, 
+          description: 'Twitter Spaces Live Listeners',
+          speed: 'Instant',
+          retention: 'No Refill'
+        },
+        { 
+          id: 44, 
+          name: 'Twitter » Profile Visits', 
+          rate: 1.20, 
+          min: 1000, 
+          max: 1000000, 
+          description: 'Twitter Profile Visits - Boost Visibility',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        },
+        { 
+          id: 45, 
+          name: 'Twitter » Impressions', 
+          rate: 0.30, 
+          min: 10000, 
+          max: 10000000, 
+          description: 'Twitter Tweet Impressions - Massive Reach',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        }
+      ]
+    }
   }
 
   const findService = (serviceId: string) => {
