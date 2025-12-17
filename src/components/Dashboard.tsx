@@ -953,12 +953,7 @@ const Dashboard = () => {
     { id: 'help', name: 'Help & Support', icon: HelpCircle },
   ]
 
-  const recentOrders = [
-    { id: '12345', service: 'Instagram Followers', quantity: '1000', status: 'completed', amount: '₹50' },
-    { id: '12346', service: 'TikTok Likes', quantity: '5000', status: 'processing', amount: '₹100' },
-    { id: '12347', service: 'YouTube Views', quantity: '10000', status: 'pending', amount: '₹200' },
-    { id: '12348', service: 'Facebook Likes', quantity: '2000', status: 'completed', amount: '₹40' },
-  ]
+
 
   const quickServices = [
     { name: 'Instagram Followers', price: '₹2/100', icon: '📷', popular: true },
@@ -1086,44 +1081,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            {/* Recent Orders */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-900">Recent Orders</h2>
-                <Link to="#" className="text-purple-600 hover:text-purple-700 text-sm font-medium">
-                  View All
-                </Link>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Order ID</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Service</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Quantity</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Status</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Amount</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {recentOrders.map((order) => (
-                      <tr key={order.id} className="border-b border-gray-100 hover:bg-gray-50">
-                        <td className="py-3 px-4 text-sm text-gray-900">#{order.id}</td>
-                        <td className="py-3 px-4 text-sm text-gray-900">{order.service}</td>
-                        <td className="py-3 px-4 text-sm text-gray-600">{order.quantity}</td>
-                        <td className="py-3 px-4">
-                          <span className={`inline-flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}>
-                            {getStatusIcon(order.status)}
-                            <span className="capitalize">{order.status}</span>
-                          </span>
-                        </td>
-                        <td className="py-3 px-4 text-sm font-medium text-gray-900">{order.amount}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+
           </div>
         )
       
