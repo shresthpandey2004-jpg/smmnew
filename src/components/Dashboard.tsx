@@ -208,7 +208,7 @@ const NewOrderForm = () => {
         { 
           id: 7, 
           name: 'Instagram » Followers [No Refill]', 
-          rate: 8.50, 
+          rate: 18.50, 
           min: 100, 
           max: 100000, 
           description: 'Instagram Followers - No Refill Guarantee',
@@ -218,7 +218,7 @@ const NewOrderForm = () => {
         { 
           id: 8, 
           name: 'Instagram » Followers [100% Refill]', 
-          rate: 18.00, 
+          rate: 28.00, 
           min: 100, 
           max: 50000, 
           description: 'Instagram Followers with 100% Refill Guarantee',
@@ -228,7 +228,7 @@ const NewOrderForm = () => {
         { 
           id: 9, 
           name: 'Instagram » Followers [Lifetime]', 
-          rate: 35.00, 
+          rate: 45.00, 
           min: 50, 
           max: 25000, 
           description: 'Instagram Followers - Lifetime Guarantee',
@@ -238,7 +238,7 @@ const NewOrderForm = () => {
         { 
           id: 10, 
           name: 'Instagram » Followers [TOP QUALITY]', 
-          rate: 55.00, 
+          rate: 65.00, 
           min: 25, 
           max: 15000, 
           description: 'Top Quality Instagram Followers - Premium Service',
@@ -248,7 +248,7 @@ const NewOrderForm = () => {
         { 
           id: 11, 
           name: 'Instagram » Followers [Indians]', 
-          rate: 25.00, 
+          rate: 35.00, 
           min: 50, 
           max: 20000, 
           description: 'Instagram Followers from Indian Users Only',
@@ -260,7 +260,7 @@ const NewOrderForm = () => {
         { 
           id: 3, 
           name: 'Instagram » Likes', 
-          rate: 6.50, 
+          rate: 16.50, 
           min: 50, 
           max: 100000, 
           description: 'High Quality Instagram Likes',
@@ -270,7 +270,7 @@ const NewOrderForm = () => {
         { 
           id: 4, 
           name: 'Instagram » Likes [Indians]', 
-          rate: 9.00, 
+          rate: 19.00, 
           min: 50, 
           max: 50000, 
           description: 'Instagram Likes from Indian Users',
@@ -282,7 +282,7 @@ const NewOrderForm = () => {
         { 
           id: 1, 
           name: 'Instagram » Real Views', 
-          rate: 3.50, 
+          rate: 13.50, 
           min: 100, 
           max: 100000, 
           description: 'Real Instagram Views - High Quality',
@@ -292,7 +292,7 @@ const NewOrderForm = () => {
         { 
           id: 2, 
           name: 'Instagram » Real Views [Indians]', 
-          rate: 5.50, 
+          rate: 15.50, 
           min: 100, 
           max: 50000, 
           description: 'Real Instagram Views from Indian Users',
@@ -302,7 +302,7 @@ const NewOrderForm = () => {
         { 
           id: 12, 
           name: 'Instagram » Story Views', 
-          rate: 2.80, 
+          rate: 12.80, 
           min: 100, 
           max: 50000, 
           description: 'Instagram Story Views - High Quality',
@@ -314,7 +314,7 @@ const NewOrderForm = () => {
         { 
           id: 13, 
           name: 'Instagram » Comments', 
-          rate: 65.00, 
+          rate: 75.00, 
           min: 5, 
           max: 5000, 
           description: 'Custom Instagram Comments from Real Users',
@@ -326,7 +326,7 @@ const NewOrderForm = () => {
         { 
           id: 5, 
           name: 'Instagram » Statistics', 
-          rate: 25.00, 
+          rate: 35.00, 
           min: 1, 
           max: 1000, 
           description: 'Instagram Account Statistics Analysis',
@@ -336,7 +336,7 @@ const NewOrderForm = () => {
         { 
           id: 6, 
           name: 'Instagram » Shares » Repost', 
-          rate: 15.00, 
+          rate: 25.00, 
           min: 10, 
           max: 10000, 
           description: 'Instagram Post Shares and Reposts',
@@ -346,7 +346,7 @@ const NewOrderForm = () => {
         { 
           id: 14, 
           name: 'Instagram » Live Stream', 
-          rate: 120.00, 
+          rate: 130.00, 
           min: 10, 
           max: 1000, 
           description: 'Instagram Live Stream Viewers',
@@ -360,7 +360,7 @@ const NewOrderForm = () => {
         { 
           id: 15, 
           name: 'TikTok » Followers', 
-          rate: 22.00, 
+          rate: 32.00, 
           min: 100, 
           max: 50000, 
           description: 'High Quality TikTok Followers',
@@ -372,7 +372,7 @@ const NewOrderForm = () => {
         { 
           id: 16, 
           name: 'TikTok » Likes', 
-          rate: 5.50, 
+          rate: 15.50, 
           min: 50, 
           max: 500000, 
           description: 'TikTok Likes from Real Users',
@@ -384,7 +384,7 @@ const NewOrderForm = () => {
         { 
           id: 17, 
           name: 'TikTok » Views', 
-          rate: 1.50, 
+          rate: 11.50, 
           min: 1000, 
           max: 10000000, 
           description: 'TikTok Video Views - High Quality',
@@ -398,7 +398,7 @@ const NewOrderForm = () => {
         { 
           id: 18, 
           name: 'YouTube » Subscribers [No Refill]', 
-          rate: 75.00, 
+          rate: 85.00, 
           min: 50, 
           max: 10000, 
           description: 'YouTube Subscribers - No Refill Guarantee',
@@ -408,7 +408,7 @@ const NewOrderForm = () => {
         { 
           id: 19, 
           name: 'YouTube » Subscribers [Guaranteed]', 
-          rate: 125.00, 
+          rate: 135.00, 
           min: 50, 
           max: 5000, 
           description: 'YouTube Subscribers with Lifetime Guarantee',
@@ -420,7 +420,7 @@ const NewOrderForm = () => {
         { 
           id: 20, 
           name: 'YouTube » Short/Video Views', 
-          rate: 12.00, 
+          rate: 22.00, 
           min: 1000, 
           max: 1000000, 
           description: 'YouTube Shorts and Video Views - High Quality',
@@ -432,7 +432,7 @@ const NewOrderForm = () => {
         { 
           id: 21, 
           name: 'YouTube » Likes', 
-          rate: 35.00, 
+          rate: 45.00, 
           min: 100, 
           max: 100000, 
           description: 'YouTube Video Likes from Real Users',
@@ -444,7 +444,7 @@ const NewOrderForm = () => {
         { 
           id: 22, 
           name: 'YouTube » Comments', 
-          rate: 85.00, 
+          rate: 95.00, 
           min: 10, 
           max: 5000, 
           description: 'Custom YouTube Comments from Real Users',
@@ -456,7 +456,7 @@ const NewOrderForm = () => {
         { 
           id: 23, 
           name: 'YouTube » Watch-Time', 
-          rate: 55.00, 
+          rate: 65.00, 
           min: 100, 
           max: 50000, 
           description: 'YouTube Watch Time Hours - Boost Monetization',
@@ -468,7 +468,7 @@ const NewOrderForm = () => {
         { 
           id: 24, 
           name: 'YouTube » [Indian Services]', 
-          rate: 85.00, 
+          rate: 95.00, 
           min: 50, 
           max: 20000, 
           description: 'YouTube Services from Indian Users Only',
@@ -482,7 +482,7 @@ const NewOrderForm = () => {
         { 
           id: 25, 
           name: 'Facebook » Followers', 
-          rate: 16.00, 
+          rate: 26.00, 
           min: 100, 
           max: 50000, 
           description: 'High Quality Facebook Page Followers',
@@ -494,7 +494,7 @@ const NewOrderForm = () => {
         { 
           id: 26, 
           name: 'Facebook » Likes', 
-          rate: 9.50, 
+          rate: 19.50, 
           min: 50, 
           max: 100000, 
           description: 'Facebook Post Likes from Real Users',
@@ -506,7 +506,7 @@ const NewOrderForm = () => {
         { 
           id: 27, 
           name: 'Facebook » Reel/Video Views', 
-          rate: 7.00, 
+          rate: 17.00, 
           min: 1000, 
           max: 1000000, 
           description: 'Facebook Reel and Video Views - High Quality',
@@ -518,7 +518,7 @@ const NewOrderForm = () => {
         { 
           id: 29, 
           name: 'Facebook » Live Stream', 
-          rate: 95.00, 
+          rate: 105.00, 
           min: 10, 
           max: 1000, 
           description: 'Facebook Live Stream Viewers',
@@ -530,7 +530,7 @@ const NewOrderForm = () => {
         { 
           id: 28, 
           name: 'Facebook » Others', 
-          rate: 18.00, 
+          rate: 28.00, 
           min: 10, 
           max: 10000, 
           description: 'Facebook Other Services (Comments, Shares, etc.)',
@@ -540,7 +540,7 @@ const NewOrderForm = () => {
         { 
           id: 30, 
           name: 'Facebook » Monetization Package', 
-          rate: 250.00, 
+          rate: 260.00, 
           min: 1, 
           max: 100, 
           description: 'Complete Facebook Page Monetization Setup',
@@ -554,7 +554,7 @@ const NewOrderForm = () => {
         { 
           id: 31, 
           name: 'Telegram » Channel Members', 
-          rate: 12.00, 
+          rate: 22.00, 
           min: 100, 
           max: 100000, 
           description: 'High Quality Telegram Channel Members',
@@ -564,7 +564,7 @@ const NewOrderForm = () => {
         { 
           id: 32, 
           name: 'Telegram » Group Members', 
-          rate: 14.50, 
+          rate: 24.50, 
           min: 50, 
           max: 50000, 
           description: 'Active Telegram Group Members',
@@ -576,7 +576,7 @@ const NewOrderForm = () => {
         { 
           id: 33, 
           name: 'Telegram » Post Views', 
-          rate: 3.50, 
+          rate: 13.50, 
           min: 1000, 
           max: 1000000, 
           description: 'Telegram Channel Post Views - High Quality',
@@ -588,7 +588,7 @@ const NewOrderForm = () => {
         { 
           id: 34, 
           name: 'Telegram » Reactions', 
-          rate: 7.00, 
+          rate: 17.00, 
           min: 100, 
           max: 50000, 
           description: 'Telegram Post Reactions (👍❤️🔥)',
@@ -600,7 +600,7 @@ const NewOrderForm = () => {
         { 
           id: 35, 
           name: 'Telegram » Comments', 
-          rate: 35.00, 
+          rate: 45.00, 
           min: 10, 
           max: 5000, 
           description: 'Custom Telegram Comments from Real Users',
@@ -614,7 +614,7 @@ const NewOrderForm = () => {
         { 
           id: 36, 
           name: 'Twitter » Followers', 
-          rate: 24.00, 
+          rate: 34.00, 
           min: 100, 
           max: 100000, 
           description: 'High Quality Twitter Followers',
@@ -624,7 +624,7 @@ const NewOrderForm = () => {
         { 
           id: 37, 
           name: 'Twitter » Followers [Premium]', 
-          rate: 55.00, 
+          rate: 65.00, 
           min: 50, 
           max: 50000, 
           description: 'Premium Twitter Followers - Top Quality',
@@ -636,7 +636,7 @@ const NewOrderForm = () => {
         { 
           id: 38, 
           name: 'Twitter » Likes', 
-          rate: 11.50, 
+          rate: 21.50, 
           min: 50, 
           max: 500000, 
           description: 'Twitter Tweet Likes from Real Users',
@@ -648,7 +648,7 @@ const NewOrderForm = () => {
         { 
           id: 39, 
           name: 'Twitter » Retweets', 
-          rate: 18.00, 
+          rate: 28.00, 
           min: 25, 
           max: 100000, 
           description: 'Twitter Retweets - Boost Engagement',
@@ -660,7 +660,7 @@ const NewOrderForm = () => {
         { 
           id: 40, 
           name: 'Twitter » Views', 
-          rate: 2.50, 
+          rate: 12.50, 
           min: 1000, 
           max: 10000000, 
           description: 'Twitter Tweet Views - High Quality',
@@ -672,7 +672,7 @@ const NewOrderForm = () => {
         { 
           id: 41, 
           name: 'Twitter » Comments/Replies', 
-          rate: 65.00, 
+          rate: 75.00, 
           min: 5, 
           max: 5000, 
           description: 'Custom Twitter Comments and Replies',
@@ -682,7 +682,7 @@ const NewOrderForm = () => {
         { 
           id: 42, 
           name: 'Twitter » Bookmarks', 
-          rate: 16.00, 
+          rate: 26.00, 
           min: 50, 
           max: 50000, 
           description: 'Twitter Tweet Bookmarks',
@@ -692,7 +692,7 @@ const NewOrderForm = () => {
         { 
           id: 43, 
           name: 'Twitter » Spaces Listeners', 
-          rate: 35.00, 
+          rate: 45.00, 
           min: 10, 
           max: 5000, 
           description: 'Twitter Spaces Live Listeners',
@@ -702,7 +702,7 @@ const NewOrderForm = () => {
         { 
           id: 44, 
           name: 'Twitter » Profile Visits', 
-          rate: 5.50, 
+          rate: 15.50, 
           min: 1000, 
           max: 1000000, 
           description: 'Twitter Profile Visits - Boost Visibility',
@@ -712,7 +712,7 @@ const NewOrderForm = () => {
         { 
           id: 45, 
           name: 'Twitter » Impressions', 
-          rate: 1.50, 
+          rate: 11.50, 
           min: 10000, 
           max: 10000000, 
           description: 'Twitter Tweet Impressions - Massive Reach',
