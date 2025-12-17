@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Star, Quote } from 'lucide-react'
 
 const Testimonials = () => {
@@ -160,13 +161,13 @@ const Testimonials = () => {
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto text-lg">
               Start your social media growth journey today and see why thousands of customers trust SocialBoost Pro.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-purple-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+            <div className="flex justify-center">
+              <Link 
+                to="/register"
+                className="bg-white text-purple-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors inline-block"
+              >
                 Start Growing Now
-              </button>
-              <button className="border-2 border-white text-white font-semibold px-8 py-3 rounded-xl hover:bg-white hover:text-purple-600 transition-colors">
-                View All Services
-              </button>
+              </Link>
             </div>
           </div>
         </div>
