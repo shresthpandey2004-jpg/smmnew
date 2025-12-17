@@ -75,7 +75,10 @@ const AddFundsForm = () => {
                   className="w-full h-full object-contain rounded-lg"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                    const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (nextElement) {
+                      nextElement.style.display = 'flex';
+                    }
                   }}
                 />
                 <div className="w-full h-full hidden items-center justify-center text-center">
