@@ -8,153 +8,173 @@ import {
 
 const NewOrderForm = () => {
   const [selectedCategory, setSelectedCategory] = useState('')
+  const [selectedSubcategory, setSelectedSubcategory] = useState('')
   const [selectedService, setSelectedService] = useState('')
   const [link, setLink] = useState('')
   const [quantity, setQuantity] = useState('')
   const [totalCost, setTotalCost] = useState(0)
 
+  const subcategories = {
+    instagram: ['Followers', 'Likes', 'Views', 'Comments', 'Others'],
+    tiktok: ['Followers', 'Likes', 'Views'],
+    youtube: ['Subscribers', 'Views', 'Likes', 'Comments', 'Watch-Time', 'Others'],
+    facebook: ['Followers', 'Likes', 'Views', 'Live Stream', 'Others'],
+    telegram: ['Members', 'Views', 'Reactions', 'Comments'],
+    twitter: ['Followers', 'Likes', 'Retweets', 'Views', 'Others']
+  }
+
   const services = {
-    instagram: [
-      { 
-        id: 1, 
-        name: 'Instagram » Real Views', 
-        rate: 0.80, 
-        min: 100, 
-        max: 100000, 
-        description: 'Real Instagram Views - High Quality',
-        speed: 'Fast (0-1 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 2, 
-        name: 'Instagram » Real Views [Indians]', 
-        rate: 1.20, 
-        min: 100, 
-        max: 50000, 
-        description: 'Real Instagram Views from Indian Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 3, 
-        name: 'Instagram » Likes', 
-        rate: 1.50, 
-        min: 50, 
-        max: 100000, 
-        description: 'High Quality Instagram Likes',
-        speed: 'Instant',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 4, 
-        name: 'Instagram » Likes [Indians]', 
-        rate: 2.00, 
-        min: 50, 
-        max: 50000, 
-        description: 'Instagram Likes from Indian Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '90 Days Refill'
-      },
-      { 
-        id: 5, 
-        name: 'Instagram » Statistics', 
-        rate: 5.00, 
-        min: 1, 
-        max: 1000, 
-        description: 'Instagram Account Statistics Analysis',
-        speed: 'Instant',
-        retention: 'No Refill'
-      },
-      { 
-        id: 6, 
-        name: 'Instagram » Shares » Repost', 
-        rate: 3.50, 
-        min: 10, 
-        max: 10000, 
-        description: 'Instagram Post Shares and Reposts',
-        speed: 'Fast (1-6 hours)',
-        retention: '30 Days Refill'
-      },
-      { 
-        id: 7, 
-        name: 'Instagram » Followers [No Refill]', 
-        rate: 1.80, 
-        min: 100, 
-        max: 100000, 
-        description: 'Instagram Followers - No Refill Guarantee',
-        speed: 'Fast (1-6 hours)',
-        retention: 'No Refill'
-      },
-      { 
-        id: 8, 
-        name: 'Instagram » Followers [100% Refill]', 
-        rate: 4.50, 
-        min: 100, 
-        max: 50000, 
-        description: 'Instagram Followers with 100% Refill Guarantee',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 9, 
-        name: 'Instagram » Followers [Lifetime]', 
-        rate: 8.00, 
-        min: 50, 
-        max: 25000, 
-        description: 'Instagram Followers - Lifetime Guarantee',
-        speed: 'Slow (24-72 hours)',
-        retention: 'Lifetime Refill'
-      },
-      { 
-        id: 10, 
-        name: 'Instagram » Followers [TOP QUALITY]', 
-        rate: 12.00, 
-        min: 25, 
-        max: 15000, 
-        description: 'Top Quality Instagram Followers - Premium Service',
-        speed: 'Slow (24-72 hours)',
-        retention: 'Lifetime Refill'
-      },
-      { 
-        id: 11, 
-        name: 'Instagram » Followers [Indians]', 
-        rate: 6.50, 
-        min: 50, 
-        max: 20000, 
-        description: 'Instagram Followers from Indian Users Only',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 12, 
-        name: 'Instagram » Story Views', 
-        rate: 0.60, 
-        min: 100, 
-        max: 50000, 
-        description: 'Instagram Story Views - High Quality',
-        speed: 'Fast (0-1 hours)',
-        retention: '7 Days Refill'
-      },
-      { 
-        id: 13, 
-        name: 'Instagram » Comments', 
-        rate: 15.00, 
-        min: 5, 
-        max: 5000, 
-        description: 'Custom Instagram Comments from Real Users',
-        speed: 'Fast (1-6 hours)',
-        retention: '365 Days Refill'
-      },
-      { 
-        id: 14, 
-        name: 'Instagram » Live Stream', 
-        rate: 25.00, 
-        min: 10, 
-        max: 1000, 
-        description: 'Instagram Live Stream Viewers',
-        speed: 'Instant',
-        retention: 'No Refill'
-      }
+    instagram: {
+      followers: [
+        { 
+          id: 7, 
+          name: 'Instagram » Followers [No Refill]', 
+          rate: 1.80, 
+          min: 100, 
+          max: 100000, 
+          description: 'Instagram Followers - No Refill Guarantee',
+          speed: 'Fast (1-6 hours)',
+          retention: 'No Refill'
+        },
+        { 
+          id: 8, 
+          name: 'Instagram » Followers [100% Refill]', 
+          rate: 4.50, 
+          min: 100, 
+          max: 50000, 
+          description: 'Instagram Followers with 100% Refill Guarantee',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        },
+        { 
+          id: 9, 
+          name: 'Instagram » Followers [Lifetime]', 
+          rate: 8.00, 
+          min: 50, 
+          max: 25000, 
+          description: 'Instagram Followers - Lifetime Guarantee',
+          speed: 'Slow (24-72 hours)',
+          retention: 'Lifetime Refill'
+        },
+        { 
+          id: 10, 
+          name: 'Instagram » Followers [TOP QUALITY]', 
+          rate: 12.00, 
+          min: 25, 
+          max: 15000, 
+          description: 'Top Quality Instagram Followers - Premium Service',
+          speed: 'Slow (24-72 hours)',
+          retention: 'Lifetime Refill'
+        },
+        { 
+          id: 11, 
+          name: 'Instagram » Followers [Indians]', 
+          rate: 6.50, 
+          min: 50, 
+          max: 20000, 
+          description: 'Instagram Followers from Indian Users Only',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      likes: [
+        { 
+          id: 3, 
+          name: 'Instagram » Likes', 
+          rate: 1.50, 
+          min: 50, 
+          max: 100000, 
+          description: 'High Quality Instagram Likes',
+          speed: 'Instant',
+          retention: '90 Days Refill'
+        },
+        { 
+          id: 4, 
+          name: 'Instagram » Likes [Indians]', 
+          rate: 2.00, 
+          min: 50, 
+          max: 50000, 
+          description: 'Instagram Likes from Indian Users',
+          speed: 'Fast (1-6 hours)',
+          retention: '90 Days Refill'
+        }
+      ],
+      views: [
+        { 
+          id: 1, 
+          name: 'Instagram » Real Views', 
+          rate: 0.80, 
+          min: 100, 
+          max: 100000, 
+          description: 'Real Instagram Views - High Quality',
+          speed: 'Fast (0-1 hours)',
+          retention: '30 Days Refill'
+        },
+        { 
+          id: 2, 
+          name: 'Instagram » Real Views [Indians]', 
+          rate: 1.20, 
+          min: 100, 
+          max: 50000, 
+          description: 'Real Instagram Views from Indian Users',
+          speed: 'Fast (1-6 hours)',
+          retention: '30 Days Refill'
+        },
+        { 
+          id: 12, 
+          name: 'Instagram » Story Views', 
+          rate: 0.60, 
+          min: 100, 
+          max: 50000, 
+          description: 'Instagram Story Views - High Quality',
+          speed: 'Fast (0-1 hours)',
+          retention: '7 Days Refill'
+        }
+      ],
+      comments: [
+        { 
+          id: 13, 
+          name: 'Instagram » Comments', 
+          rate: 15.00, 
+          min: 5, 
+          max: 5000, 
+          description: 'Custom Instagram Comments from Real Users',
+          speed: 'Fast (1-6 hours)',
+          retention: '365 Days Refill'
+        }
+      ],
+      others: [
+        { 
+          id: 5, 
+          name: 'Instagram » Statistics', 
+          rate: 5.00, 
+          min: 1, 
+          max: 1000, 
+          description: 'Instagram Account Statistics Analysis',
+          speed: 'Instant',
+          retention: 'No Refill'
+        },
+        { 
+          id: 6, 
+          name: 'Instagram » Shares » Repost', 
+          rate: 3.50, 
+          min: 10, 
+          max: 10000, 
+          description: 'Instagram Post Shares and Reposts',
+          speed: 'Fast (1-6 hours)',
+          retention: '30 Days Refill'
+        },
+        { 
+          id: 14, 
+          name: 'Instagram » Live Stream', 
+          rate: 25.00, 
+          min: 10, 
+          max: 1000, 
+          description: 'Instagram Live Stream Viewers',
+          speed: 'Instant',
+          retention: 'No Refill'
+        }
+      ]
     ],
     tiktok: [
       { 
@@ -478,6 +498,16 @@ const NewOrderForm = () => {
     ]
   }
 
+  const findService = (serviceId: string) => {
+    for (const category of Object.values(services)) {
+      for (const subcategory of Object.values(category)) {
+        const service = subcategory.find((s: any) => s.id.toString() === serviceId)
+        if (service) return service
+      }
+    }
+    return null
+  }
+
   const calculateCost = (qty: string, rate: number) => {
     const numQty = parseInt(qty) || 0
     const cost = (numQty * rate) / 1000
@@ -487,7 +517,7 @@ const NewOrderForm = () => {
   const handleQuantityChange = (value: string) => {
     setQuantity(value)
     if (selectedService) {
-      const service = Object.values(services).flat().find(s => s.id.toString() === selectedService)
+      const service = findService(selectedService)
       if (service) {
         calculateCost(value, service.rate)
       }
@@ -497,15 +527,14 @@ const NewOrderForm = () => {
   const handleServiceChange = (serviceId: string) => {
     setSelectedService(serviceId)
     if (quantity) {
-      const service = Object.values(services).flat().find(s => s.id.toString() === serviceId)
+      const service = findService(serviceId)
       if (service) {
         calculateCost(quantity, service.rate)
       }
     }
   }
 
-  const selectedServiceData = selectedService ? 
-    Object.values(services).flat().find(s => s.id.toString() === selectedService) : null
+  const selectedServiceData = selectedService ? findService(selectedService) : null
 
   return (
     <div className="space-y-6">
@@ -516,13 +545,14 @@ const NewOrderForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Form Fields */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
                 <select 
                   value={selectedCategory}
                   onChange={(e) => {
                     setSelectedCategory(e.target.value)
+                    setSelectedSubcategory('')
                     setSelectedService('')
                     setTotalCost(0)
                   }}
@@ -538,17 +568,38 @@ const NewOrderForm = () => {
                   <option value="linkedin">💼 LinkedIn</option>
                 </select>
               </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Subcategory</label>
+                <select 
+                  value={selectedSubcategory}
+                  onChange={(e) => {
+                    setSelectedSubcategory(e.target.value)
+                    setSelectedService('')
+                    setTotalCost(0)
+                  }}
+                  disabled={!selectedCategory}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled:bg-gray-100"
+                >
+                  <option value="">Select Subcategory</option>
+                  {selectedCategory && subcategories[selectedCategory as keyof typeof subcategories]?.map(subcat => (
+                    <option key={subcat} value={subcat.toLowerCase()}>
+                      {subcat}
+                    </option>
+                  ))}
+                </select>
+              </div>
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Service</label>
                 <select 
                   value={selectedService}
                   onChange={(e) => handleServiceChange(e.target.value)}
-                  disabled={!selectedCategory}
+                  disabled={!selectedSubcategory}
                   className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled:bg-gray-100"
                 >
                   <option value="">Select Service</option>
-                  {selectedCategory && services[selectedCategory as keyof typeof services]?.map(service => (
+                  {selectedCategory && selectedSubcategory && services[selectedCategory as keyof typeof services]?.[selectedSubcategory as keyof typeof services[keyof typeof services]]?.map((service: any) => (
                     <option key={service.id} value={service.id}>
                       {service.name}
                     </option>
