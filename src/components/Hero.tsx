@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Play, Star, Users, Zap, Shield } from 'lucide-react'
+import { ArrowRight, Star, Users, Zap, Shield } from 'lucide-react'
 
 const Hero = () => {
   const platforms = [
@@ -79,10 +79,6 @@ const Hero = () => {
                 Start Growing Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
-              <button className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border border-gray-300 hover:bg-gray-50 transition-all">
-                <Play className="mr-2 w-5 h-5" />
-                Watch Demo
-              </button>
             </div>
 
             {/* Trust Indicators */}
