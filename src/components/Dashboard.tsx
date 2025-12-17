@@ -185,7 +185,7 @@ const AddFundsForm = () => {
   )
 }
 
-const NewOrderForm = () => {
+const NewOrderForm = ({ addOrder }) => {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedSubcategory, setSelectedSubcategory] = useState('')
   const [selectedService, setSelectedService] = useState('')
@@ -739,6 +739,34 @@ const NewOrderForm = () => {
     setTotalCost(cost)
   }
 
+  const handlePlaceOrder = () => {
+    if (!selectedService || !link || !quantity) return
+    
+    const service = findService(selectedService)
+    if (!service) return
+
+    const orderData = {
+      service: service.name,
+      category: selectedCategory,
+      subcategory: selectedSubcategory,
+      link: link,
+      quantity: parseInt(quantity),
+      totalCost: totalCost.toFixed(2)
+    }
+
+    addOrder(orderData)
+    
+    // Reset form
+    setSelectedCategory('')
+    setSelectedSubcategory('')
+    setSelectedService('')
+    setLink('')
+    setQuantity('')
+    setTotalCost(0)
+    
+    alert('Order placed successfully! Check Order History to view your order.')
+  }
+
   const handleQuantityChange = (value: string) => {
     setQuantity(value)
     if (selectedService) {
@@ -872,6 +900,7 @@ const NewOrderForm = () => {
             </div>
 
             <button 
+              onClick={handlePlaceOrder}
               disabled={!selectedService || !link || !quantity}
               className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -940,9 +969,94 @@ const NewOrderForm = () => {
   )
 }
 
+const OrderHistory = ({ orders }) => {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'completed': return 'text-green-600 bg-green-100'
+      case 'processing': return 'text-blue-600 bg-blue-100'
+      case 'pending': return 'text-orange-600 bg-orange-100'
+      default: return 'text-gray-600 bg-gray-100'
+    }
+  }
+
+  const getStatusIcon = (status: string) => {
+    switch (status) {
+      case 'completed': return <CheckCircle className="w-4 h-4" />
+      case 'processing': return <RefreshCw className="w-4 h-4" />
+      case 'pending': return <Clock className="w-4 h-4" />
+      default: return <AlertCircle className="w-4 h-4" />
+    }
+  }
+
+  return (
+    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Order History</h2>
+      
+      {orders.length === 0 ? (
+        <div className="text-center py-8">
+          <History className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+          <p className="text-gray-500">No orders yet. Place your first order!</p>
+        </div>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-gray-200">
+                <th className="text-left py-3 px-4 font-medium text-gray-700">Order ID</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-700">Service</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-700">Quantity</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-700">Status</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-700">Amount</th>
+                <th className="text-left py-3 px-4 font-medium text-gray-700">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr key={order.id} className="border-b border-gray-100 hover:bg-gray-50">
+                  <td className="py-3 px-4 text-sm text-gray-900">#{order.id}</td>
+                  <td className="py-3 px-4 text-sm text-gray-900">{order.service}</td>
+                  <td className="py-3 px-4 text-sm text-gray-600">{order.quantity.toLocaleString()}</td>
+                  <td className="py-3 px-4">
+                    <span className={`inline-flex items-center space-x-1 px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(order.status)}`}>
+                      {getStatusIcon(order.status)}
+                      <span className="capitalize">{order.status}</span>
+                    </span>
+                  </td>
+                  <td className="py-3 px-4 text-sm font-medium text-gray-900">{order.amount}</td>
+                  <td className="py-3 px-4 text-sm text-gray-500">
+                    {new Date(order.createdAt).toLocaleDateString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  )
+}
+
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('new-order')
+  const [orders, setOrders] = useState(() => {
+    const savedOrders = localStorage.getItem('userOrders')
+    return savedOrders ? JSON.parse(savedOrders) : []
+  })
+
+  const addOrder = (orderData) => {
+    const newOrder = {
+      id: Date.now().toString(),
+      ...orderData,
+      status: 'pending',
+      createdAt: new Date().toISOString(),
+      amount: `₹${orderData.totalCost}`
+    }
+    
+    const updatedOrders = [newOrder, ...orders]
+    setOrders(updatedOrders)
+    localStorage.setItem('userOrders', JSON.stringify(updatedOrders))
+  }
 
   const sidebarItems = [
     { id: 'new-order', name: 'New Order', icon: ShoppingCart },
@@ -956,31 +1070,18 @@ const Dashboard = () => {
 
 
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'completed': return 'text-green-600 bg-green-100'
-      case 'processing': return 'text-blue-600 bg-blue-100'
-      case 'pending': return 'text-orange-600 bg-orange-100'
-      default: return 'text-gray-600 bg-gray-100'
-    }
-  }
 
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'completed': return <CheckCircle className="w-4 h-4" />
-      case 'processing': return <RefreshCw className="w-4 h-4 animate-spin" />
-      case 'pending': return <Clock className="w-4 h-4" />
-      default: return <AlertCircle className="w-4 h-4" />
-    }
-  }
 
   const renderDashboardContent = () => {
     switch (activeTab) {
-
-      
       case 'new-order':
         return (
-          <NewOrderForm />
+          <NewOrderForm addOrder={addOrder} />
+        )
+      
+      case 'order-history':
+        return (
+          <OrderHistory orders={orders} />
         )
       
       case 'add-funds':
