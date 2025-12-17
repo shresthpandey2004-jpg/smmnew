@@ -158,24 +158,34 @@ const NewOrderForm = () => {
     ],
     tiktok: [
       { 
-        id: 4, 
-        name: 'TikTok Followers [Real Users]', 
-        rate: 4.00, 
+        id: 15, 
+        name: 'TikTok » Followers', 
+        rate: 4.50, 
         min: 100, 
-        max: 25000, 
-        description: 'Real Active TikTok Users',
+        max: 50000, 
+        description: 'High Quality TikTok Followers',
         speed: 'Fast (1-6 hours)',
         retention: '365 Days Refill'
       },
       { 
-        id: 5, 
-        name: 'TikTok Likes [High Quality]', 
-        rate: 1.50, 
-        min: 100, 
+        id: 16, 
+        name: 'TikTok » Likes', 
+        rate: 1.20, 
+        min: 50, 
         max: 500000, 
-        description: 'High Quality Likes from Real Accounts',
+        description: 'TikTok Likes from Real Users',
         speed: 'Instant',
         retention: '90 Days Refill'
+      },
+      { 
+        id: 17, 
+        name: 'TikTok » Views', 
+        rate: 0.30, 
+        min: 1000, 
+        max: 10000000, 
+        description: 'TikTok Video Views - High Quality',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
       }
     ],
     youtube: [
