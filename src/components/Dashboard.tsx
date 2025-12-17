@@ -945,7 +945,6 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('new-order')
 
   const sidebarItems = [
-    { id: 'dashboard', name: 'Dashboard', icon: Home },
     { id: 'new-order', name: 'New Order', icon: ShoppingCart },
     { id: 'order-history', name: 'Order History', icon: History },
     { id: 'add-funds', name: 'Add Funds', icon: CreditCard },
@@ -955,12 +954,7 @@ const Dashboard = () => {
 
 
 
-  const quickServices = [
-    { name: 'Instagram Followers', price: '₹2/100', icon: '📷', popular: true },
-    { name: 'TikTok Likes', price: '₹1/1000', icon: '🎵', popular: false },
-    { name: 'YouTube Views', price: '₹5/1000', icon: '📺', popular: true },
-    { name: 'Facebook Likes', price: '₹2/100', icon: '👥', popular: false },
-  ]
+
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -982,108 +976,7 @@ const Dashboard = () => {
 
   const renderDashboardContent = () => {
     switch (activeTab) {
-      case 'dashboard':
-        return (
-          <div className="space-y-6">
-            {/* Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Total Orders</p>
-                    <p className="text-2xl font-bold text-gray-900">1,234</p>
-                  </div>
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <ShoppingCart className="w-6 h-6 text-blue-600" />
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center text-sm">
-                  <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-                  <span className="text-green-500">+12%</span>
-                  <span className="text-gray-500 ml-1">from last month</span>
-                </div>
-              </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Total Spent</p>
-                    <p className="text-2xl font-bold text-gray-900">₹45,678</p>
-                  </div>
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 text-green-600" />
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center text-sm">
-                  <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
-                  <span className="text-green-500">+8%</span>
-                  <span className="text-gray-500 ml-1">from last month</span>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Active Orders</p>
-                    <p className="text-2xl font-bold text-gray-900">23</p>
-                  </div>
-                  <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-orange-600" />
-                  </div>
-                </div>
-                <div className="mt-4 flex items-center text-sm">
-                  <span className="text-orange-500">Processing</span>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Wallet Balance</p>
-                    <p className="text-2xl font-bold text-gray-900">₹2,500</p>
-                  </div>
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 text-purple-600" />
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <button className="text-sm text-purple-600 hover:text-purple-700 font-medium">
-                    Add Funds
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Services */}
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-gray-900">Quick Order</h2>
-                <Link to="#" className="text-purple-600 hover:text-purple-700 text-sm font-medium">
-                  View All Services
-                </Link>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {quickServices.map((service, index) => (
-                  <div key={index} className="relative border border-gray-200 rounded-lg p-4 hover:border-purple-300 transition-colors cursor-pointer">
-                    {service.popular && (
-                      <div className="absolute -top-2 -right-2 bg-purple-600 text-white text-xs px-2 py-1 rounded-full">
-                        Popular
-                      </div>
-                    )}
-                    <div className="text-2xl mb-2">{service.icon}</div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{service.name}</h3>
-                    <p className="text-sm text-gray-600 mb-3">{service.price}</p>
-                    <button className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm">
-                      Order Now
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-
-          </div>
-        )
       
       case 'new-order':
         return (
