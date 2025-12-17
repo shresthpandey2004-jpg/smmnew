@@ -70,7 +70,7 @@ const AddFundsForm = () => {
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-6 mb-6 text-center border border-blue-200">
               <div className="w-64 h-64 mx-auto bg-white rounded-lg border-2 border-blue-300 p-4 mb-4 shadow-lg">
                 <img 
-                  src="/payment-qr.png" 
+                  src="/payment-qr.jpg" 
                   alt="Payment QR Code" 
                   className="w-full h-full object-contain rounded-lg"
                   onError={(e) => {
