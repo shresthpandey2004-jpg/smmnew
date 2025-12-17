@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, setIsLoggedIn }) => {
             <Link to="/" className="text-gray-700 hover:text-purple-600 transition-colors">Home</Link>
             <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
             <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
-            <a href="#pricing" className="text-gray-700 hover:text-purple-600 transition-colors">Pricing</a>
+            <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">Customers</a>
             <a href="#contact" className="text-gray-700 hover:text-purple-600 transition-colors">Contact</a>
           </nav>
 
@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, setIsLoggedIn }) => {
               <Link to="/" className="text-gray-700 hover:text-purple-600 transition-colors">Home</Link>
               <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
               <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
-              <a href="#pricing" className="text-gray-700 hover:text-purple-600 transition-colors">Pricing</a>
+              <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">Customers</a>
               <a href="#contact" className="text-gray-700 hover:text-purple-600 transition-colors">Contact</a>
               
               {isLoggedIn ? (
