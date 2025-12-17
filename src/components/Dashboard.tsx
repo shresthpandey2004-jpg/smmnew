@@ -321,6 +321,58 @@ const NewOrderForm = () => {
         speed: 'Slow (24-72 hours)',
         retention: 'Lifetime Guarantee'
       }
+    ],
+    telegram: [
+      { 
+        id: 31, 
+        name: 'Telegram » Channel Members', 
+        rate: 2.50, 
+        min: 100, 
+        max: 100000, 
+        description: 'High Quality Telegram Channel Members',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 32, 
+        name: 'Telegram » Group Members', 
+        rate: 3.00, 
+        min: 50, 
+        max: 50000, 
+        description: 'Active Telegram Group Members',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 33, 
+        name: 'Telegram » Post Views', 
+        rate: 0.80, 
+        min: 1000, 
+        max: 1000000, 
+        description: 'Telegram Channel Post Views - High Quality',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
+      },
+      { 
+        id: 34, 
+        name: 'Telegram » Reactions', 
+        rate: 1.50, 
+        min: 100, 
+        max: 50000, 
+        description: 'Telegram Post Reactions (👍❤️🔥)',
+        speed: 'Fast (0-1 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 35, 
+        name: 'Telegram » Comments', 
+        rate: 8.00, 
+        min: 10, 
+        max: 5000, 
+        description: 'Custom Telegram Comments from Real Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      }
     ]
   }
 
@@ -379,6 +431,7 @@ const NewOrderForm = () => {
                   <option value="tiktok">🎵 TikTok</option>
                   <option value="youtube">📺 YouTube</option>
                   <option value="facebook">👥 Facebook</option>
+                  <option value="telegram">📱 Telegram</option>
                   <option value="twitter">🐦 Twitter</option>
                   <option value="linkedin">💼 LinkedIn</option>
                 </select>
