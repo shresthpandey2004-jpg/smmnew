@@ -373,6 +373,108 @@ const NewOrderForm = () => {
         speed: 'Fast (1-6 hours)',
         retention: '365 Days Refill'
       }
+    ],
+    twitter: [
+      { 
+        id: 36, 
+        name: 'Twitter » Followers', 
+        rate: 5.00, 
+        min: 100, 
+        max: 100000, 
+        description: 'High Quality Twitter Followers',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 37, 
+        name: 'Twitter » Followers [Premium]', 
+        rate: 12.00, 
+        min: 50, 
+        max: 50000, 
+        description: 'Premium Twitter Followers - Top Quality',
+        speed: 'Slow (24-72 hours)',
+        retention: 'Lifetime Refill'
+      },
+      { 
+        id: 38, 
+        name: 'Twitter » Likes', 
+        rate: 2.50, 
+        min: 50, 
+        max: 500000, 
+        description: 'Twitter Tweet Likes from Real Users',
+        speed: 'Fast (0-1 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 39, 
+        name: 'Twitter » Retweets', 
+        rate: 4.00, 
+        min: 25, 
+        max: 100000, 
+        description: 'Twitter Retweets - Boost Engagement',
+        speed: 'Fast (1-6 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 40, 
+        name: 'Twitter » Views', 
+        rate: 0.50, 
+        min: 1000, 
+        max: 10000000, 
+        description: 'Twitter Tweet Views - High Quality',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
+      },
+      { 
+        id: 41, 
+        name: 'Twitter » Comments/Replies', 
+        rate: 15.00, 
+        min: 5, 
+        max: 5000, 
+        description: 'Custom Twitter Comments and Replies',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 42, 
+        name: 'Twitter » Bookmarks', 
+        rate: 3.50, 
+        min: 50, 
+        max: 50000, 
+        description: 'Twitter Tweet Bookmarks',
+        speed: 'Fast (1-6 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 43, 
+        name: 'Twitter » Spaces Listeners', 
+        rate: 8.00, 
+        min: 10, 
+        max: 5000, 
+        description: 'Twitter Spaces Live Listeners',
+        speed: 'Instant',
+        retention: 'No Refill'
+      },
+      { 
+        id: 44, 
+        name: 'Twitter » Profile Visits', 
+        rate: 1.20, 
+        min: 1000, 
+        max: 1000000, 
+        description: 'Twitter Profile Visits - Boost Visibility',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
+      },
+      { 
+        id: 45, 
+        name: 'Twitter » Impressions', 
+        rate: 0.30, 
+        min: 10000, 
+        max: 10000000, 
+        description: 'Twitter Tweet Impressions - Massive Reach',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
+      }
     ]
   }
 
