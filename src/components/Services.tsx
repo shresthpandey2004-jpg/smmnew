@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ArrowRight, Star, Clock, Shield, Zap } from 'lucide-react'
 
 const Services = () => {
@@ -189,10 +190,13 @@ const Services = () => {
               </div>
 
               {/* Order Button */}
-              <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all transform group-hover:scale-105 flex items-center justify-center space-x-2 shadow-lg">
+              <Link 
+                to="/register"
+                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all transform group-hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
+              >
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -204,9 +208,12 @@ const Services = () => {
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
               Looking for bulk orders or custom services? Contact our team for personalized pricing and packages tailored to your needs.
             </p>
-            <button className="bg-white text-purple-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
-              Contact Sales Team
-            </button>
+            <Link 
+              to="/register"
+              className="bg-white text-purple-600 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors inline-block"
+            >
+              Get Started Now
+            </Link>
           </div>
         </div>
       </div>
