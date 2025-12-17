@@ -8,6 +8,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isLoggedIn, setIsLoggedIn }) => {
+  // Dashboard restored - recent orders removed only
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const handleLogout = () => {
