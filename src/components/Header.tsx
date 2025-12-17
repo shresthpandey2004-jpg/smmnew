@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, setIsLoggedIn }) => {
             <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
             <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
             <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">Customers</a>
-            <a href="#contact" className="text-gray-700 hover:text-purple-600 transition-colors">Contact</a>
+            <a href="#how-it-works" className="text-gray-700 hover:text-purple-600 transition-colors">How It Works</a>
           </nav>
 
           {/* Auth Buttons */}
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ isLoggedIn, setIsLoggedIn }) => {
               <a href="#services" className="text-gray-700 hover:text-purple-600 transition-colors">Services</a>
               <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors">Features</a>
               <a href="#testimonials" className="text-gray-700 hover:text-purple-600 transition-colors">Customers</a>
-              <a href="#contact" className="text-gray-700 hover:text-purple-600 transition-colors">Contact</a>
+              <a href="#how-it-works" className="text-gray-700 hover:text-purple-600 transition-colors">How It Works</a>
               
               {isLoggedIn ? (
                 <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
