@@ -6,6 +6,151 @@ import {
   Clock, CheckCircle, AlertCircle, RefreshCw
 } from 'lucide-react'
 
+const AddFundsForm = () => {
+  const [amount, setAmount] = useState('')
+  const [paymentId, setPaymentId] = useState('')
+  const [showPaymentForm, setShowPaymentForm] = useState(false)
+
+  const handleAmountSubmit = () => {
+    const numAmount = parseInt(amount)
+    if (numAmount >= 100) {
+      setShowPaymentForm(true)
+    } else {
+      alert('Minimum payment amount is ₹100')
+    }
+  }
+
+  const handlePaymentSubmit = () => {
+    if (paymentId.trim()) {
+      alert('Payment submitted for verification! Your amount will be added to your account after instant verification.')
+      setAmount('')
+      setPaymentId('')
+      setShowPaymentForm(false)
+    } else {
+      alert('Please enter payment ID')
+    }
+  }
+
+  return (
+    <div className="space-y-6">
+      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Add Funds to Wallet</h2>
+        
+        {!showPaymentForm ? (
+          <div className="max-w-md mx-auto">
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Enter Amount (₹)</label>
+              <input 
+                type="number" 
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="Minimum ₹100"
+                min="100"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg"
+              />
+              <p className="text-sm text-gray-500 mt-2">Minimum payment: ₹100</p>
+            </div>
+            
+            <button 
+              onClick={handleAmountSubmit}
+              disabled={!amount || parseInt(amount) < 100}
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Proceed to Payment
+            </button>
+          </div>
+        ) : (
+          <div className="max-w-lg mx-auto">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Pay ₹{amount}</h3>
+              <p className="text-gray-600">Scan QR code and pay the amount</p>
+            </div>
+
+            {/* QR Code Section */}
+            <div className="bg-gray-50 rounded-lg p-6 mb-6 text-center">
+              <div className="w-48 h-48 mx-auto bg-white rounded-lg border-2 border-gray-200 flex items-center justify-center mb-4">
+                <div className="text-center">
+                  <div className="text-6xl mb-2">📱</div>
+                  <p className="text-sm text-gray-600">QR Code Scanner</p>
+                  <p className="text-xs text-gray-500 mt-1">Scan with any UPI app</p>
+                </div>
+              </div>
+              
+              <div className="space-y-2 text-sm">
+                <p><strong>UPI ID:</strong> payment@socialboost.com</p>
+                <p><strong>Amount:</strong> ₹{amount}</p>
+                <p className="text-purple-600 font-medium">Pay exactly ₹{amount}</p>
+              </div>
+            </div>
+
+            {/* Payment Instructions */}
+            <div className="bg-blue-50 rounded-lg p-4 mb-6">
+              <h4 className="font-medium text-blue-900 mb-2">Payment Instructions:</h4>
+              <ul className="text-sm text-blue-800 space-y-1">
+                <li>1. Scan QR code with any UPI app (PhonePe, Paytm, GPay)</li>
+                <li>2. Pay exactly ₹{amount}</li>
+                <li>3. Copy the payment/transaction ID</li>
+                <li>4. Enter the ID below and submit</li>
+                <li>5. Amount will be added instantly after verification</li>
+              </ul>
+            </div>
+
+            {/* Payment ID Input */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Payment/Transaction ID</label>
+              <input 
+                type="text" 
+                value={paymentId}
+                onChange={(e) => setPaymentId(e.target.value)}
+                placeholder="Enter your payment ID here"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+              <p className="text-xs text-gray-500 mt-1">You'll get this ID after successful payment</p>
+            </div>
+
+            <div className="flex space-x-4">
+              <button 
+                onClick={() => setShowPaymentForm(false)}
+                className="flex-1 bg-gray-500 text-white py-3 rounded-lg hover:bg-gray-600 transition-colors font-medium"
+              >
+                Back
+              </button>
+              <button 
+                onClick={handlePaymentSubmit}
+                disabled={!paymentId.trim()}
+                className="flex-1 bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg hover:from-green-700 hover:to-green-800 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Submit Payment
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Recent Transactions */}
+      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Transactions</h3>
+        <div className="space-y-3">
+          <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+            <div>
+              <p className="font-medium text-green-800">₹500 Added</p>
+              <p className="text-sm text-green-600">Payment ID: TXN123456789</p>
+            </div>
+            <span className="text-xs text-green-600">2 hours ago</span>
+          </div>
+          <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+            <div>
+              <p className="font-medium text-blue-800">₹200 Added</p>
+              <p className="text-sm text-blue-600">Payment ID: TXN987654321</p>
+            </div>
+            <span className="text-xs text-blue-600">1 day ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const NewOrderForm = () => {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedSubcategory, setSelectedSubcategory] = useState('')
@@ -951,6 +1096,11 @@ const Dashboard = () => {
       case 'new-order':
         return (
           <NewOrderForm />
+        )
+      
+      case 'add-funds':
+        return (
+          <AddFundsForm />
         )
       
       default:
