@@ -177,11 +177,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border-l-4 border-green-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <span className="text-green-600 font-bold text-sm">🇺🇸</span>
+                <span className="text-green-600 font-bold text-sm">�🇳</span>
               </div>
               <div>
                 <p className="font-medium text-green-800">₹2,500 Added</p>
-                <p className="text-xs text-green-600">John D. • New York, USA</p>
+                <p className="text-xs text-green-600">Rahul S. • Mumbai, Maharashtra</p>
               </div>
             </div>
             <span className="text-xs text-green-600 font-medium">2 min ago</span>
@@ -190,11 +190,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-sm">🇬🇧</span>
+                <span className="text-blue-600 font-bold text-sm">��</spapan>
               </div>
               <div>
                 <p className="font-medium text-blue-800">₹1,800 Added</p>
-                <p className="text-xs text-blue-600">Sarah M. • London, UK</p>
+                <p className="text-xs text-blue-600">Priya M. • Delhi, NCR</p>
               </div>
             </div>
             <span className="text-xs text-blue-600 font-medium">5 min ago</span>
@@ -207,7 +207,7 @@ const AddFundsForm = () => {
               </div>
               <div>
                 <p className="font-medium text-purple-800">₹5,000 Added</p>
-                <p className="text-xs text-purple-600">Rahul S. • Mumbai, India</p>
+                <p className="text-xs text-purple-600">Arjun K. • Bangalore, Karnataka</p>
               </div>
             </div>
             <span className="text-xs text-purple-600 font-medium">8 min ago</span>
@@ -216,11 +216,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-orange-600 font-bold text-sm">🇦🇺</span>
+                <span className="text-orange-600 font-bold text-sm">��</spspan>
               </div>
               <div>
                 <p className="font-medium text-orange-800">₹3,200 Added</p>
-                <p className="text-xs text-orange-600">Mike T. • Sydney, Australia</p>
+                <p className="text-xs text-orange-600">Sneha T. • Hyderabad, Telangana</p>
               </div>
             </div>
             <span className="text-xs text-orange-600 font-medium">12 min ago</span>
@@ -229,11 +229,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-pink-50 rounded-lg border-l-4 border-pink-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
-                <span className="text-pink-600 font-bold text-sm">🇨🇦</span>
+                <span className="text-pink-600 font-bold text-sm">�🇳<s/span>
               </div>
               <div>
                 <p className="font-medium text-pink-800">₹1,500 Added</p>
-                <p className="text-xs text-pink-600">Emma L. • Toronto, Canada</p>
+                <p className="text-xs text-pink-600">Vikash L. • Pune, Maharashtra</p>
               </div>
             </div>
             <span className="text-xs text-pink-600 font-medium">15 min ago</span>
@@ -242,11 +242,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-indigo-50 rounded-lg border-l-4 border-indigo-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
-                <span className="text-indigo-600 font-bold text-sm">🇩🇪</span>
+                <span className="text-indigo-600 font-bold text-sm">��</spanan>
               </div>
               <div>
                 <p className="font-medium text-indigo-800">₹4,000 Added</p>
-                <p className="text-xs text-indigo-600">Hans K. • Berlin, Germany</p>
+                <p className="text-xs text-indigo-600">Ankit K. • Chennai, Tamil Nadu</p>
               </div>
             </div>
             <span className="text-xs text-indigo-600 font-medium">18 min ago</span>
@@ -255,11 +255,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-teal-50 rounded-lg border-l-4 border-teal-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-                <span className="text-teal-600 font-bold text-sm">🇧🇷</span>
+                <span className="text-teal-600 font-bold text-sm">��</span>n>
               </div>
               <div>
                 <p className="font-medium text-teal-800">₹2,800 Added</p>
-                <p className="text-xs text-teal-600">Carlos R. • São Paulo, Brazil</p>
+                <p className="text-xs text-teal-600">Ravi R. • Kolkata, West Bengal</p>
               </div>
             </div>
             <span className="text-xs text-teal-600 font-medium">22 min ago</span>
@@ -268,11 +268,11 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                <span className="text-yellow-600 font-bold text-sm">🇯🇵</span>
+                <span className="text-yellow-600 font-bold text-sm">��</span>
               </div>
               <div>
                 <p className="font-medium text-yellow-800">₹3,500 Added</p>
-                <p className="text-xs text-yellow-600">Yuki T. • Tokyo, Japan</p>
+                <p className="text-xs text-yellow-600">Neha T. • Ahmedabad, Gujarat</p>
               </div>
             </div>
             <span className="text-xs text-yellow-600 font-medium">25 min ago</span>
@@ -285,7 +285,7 @@ const AddFundsForm = () => {
             <span className="font-bold text-green-600">₹2,47,850</span>
           </div>
           <div className="flex items-center justify-between text-sm mt-1">
-            <span className="text-gray-600">Active users worldwide:</span>
+            <span className="text-gray-600">Active users in India:</span>
             <span className="font-bold text-blue-600">1,247 online</span>
           </div>
         </div>
