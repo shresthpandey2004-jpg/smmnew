@@ -166,21 +166,127 @@ const AddFundsForm = () => {
 
       {/* Recent Transactions */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Transactions</h3>
-        <div className="space-y-3">
-          <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-            <div>
-              <p className="font-medium text-green-800">₹500 Added</p>
-              <p className="text-sm text-green-600">Payment ID: TXN123456789</p>
-            </div>
-            <span className="text-xs text-green-600">2 hours ago</span>
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-gray-900">Live Transactions</h3>
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-xs text-green-600 font-medium">LIVE</span>
           </div>
-          <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-            <div>
-              <p className="font-medium text-blue-800">₹200 Added</p>
-              <p className="text-sm text-blue-600">Payment ID: TXN987654321</p>
+        </div>
+        <div className="space-y-2 max-h-64 overflow-y-auto">
+          <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border-l-4 border-green-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <span className="text-green-600 font-bold text-sm">🇺🇸</span>
+              </div>
+              <div>
+                <p className="font-medium text-green-800">₹2,500 Added</p>
+                <p className="text-xs text-green-600">John D. • New York, USA</p>
+              </div>
             </div>
-            <span className="text-xs text-blue-600">1 day ago</span>
+            <span className="text-xs text-green-600 font-medium">2 min ago</span>
+          </div>
+          
+          <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-blue-600 font-bold text-sm">🇬🇧</span>
+              </div>
+              <div>
+                <p className="font-medium text-blue-800">₹1,800 Added</p>
+                <p className="text-xs text-blue-600">Sarah M. • London, UK</p>
+              </div>
+            </div>
+            <span className="text-xs text-blue-600 font-medium">5 min ago</span>
+          </div>
+
+          <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg border-l-4 border-purple-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                <span className="text-purple-600 font-bold text-sm">🇮🇳</span>
+              </div>
+              <div>
+                <p className="font-medium text-purple-800">₹5,000 Added</p>
+                <p className="text-xs text-purple-600">Rahul S. • Mumbai, India</p>
+              </div>
+            </div>
+            <span className="text-xs text-purple-600 font-medium">8 min ago</span>
+          </div>
+
+          <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                <span className="text-orange-600 font-bold text-sm">🇦🇺</span>
+              </div>
+              <div>
+                <p className="font-medium text-orange-800">₹3,200 Added</p>
+                <p className="text-xs text-orange-600">Mike T. • Sydney, Australia</p>
+              </div>
+            </div>
+            <span className="text-xs text-orange-600 font-medium">12 min ago</span>
+          </div>
+
+          <div className="flex justify-between items-center p-3 bg-pink-50 rounded-lg border-l-4 border-pink-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                <span className="text-pink-600 font-bold text-sm">🇨🇦</span>
+              </div>
+              <div>
+                <p className="font-medium text-pink-800">₹1,500 Added</p>
+                <p className="text-xs text-pink-600">Emma L. • Toronto, Canada</p>
+              </div>
+            </div>
+            <span className="text-xs text-pink-600 font-medium">15 min ago</span>
+          </div>
+
+          <div className="flex justify-between items-center p-3 bg-indigo-50 rounded-lg border-l-4 border-indigo-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
+                <span className="text-indigo-600 font-bold text-sm">🇩🇪</span>
+              </div>
+              <div>
+                <p className="font-medium text-indigo-800">₹4,000 Added</p>
+                <p className="text-xs text-indigo-600">Hans K. • Berlin, Germany</p>
+              </div>
+            </div>
+            <span className="text-xs text-indigo-600 font-medium">18 min ago</span>
+          </div>
+
+          <div className="flex justify-between items-center p-3 bg-teal-50 rounded-lg border-l-4 border-teal-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
+                <span className="text-teal-600 font-bold text-sm">🇧🇷</span>
+              </div>
+              <div>
+                <p className="font-medium text-teal-800">₹2,800 Added</p>
+                <p className="text-xs text-teal-600">Carlos R. • São Paulo, Brazil</p>
+              </div>
+            </div>
+            <span className="text-xs text-teal-600 font-medium">22 min ago</span>
+          </div>
+
+          <div className="flex justify-between items-center p-3 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                <span className="text-yellow-600 font-bold text-sm">🇯🇵</span>
+              </div>
+              <div>
+                <p className="font-medium text-yellow-800">₹3,500 Added</p>
+                <p className="text-xs text-yellow-600">Yuki T. • Tokyo, Japan</p>
+              </div>
+            </div>
+            <span className="text-xs text-yellow-600 font-medium">25 min ago</span>
+          </div>
+        </div>
+        
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-gray-600">Total transactions today:</span>
+            <span className="font-bold text-green-600">₹2,47,850</span>
+          </div>
+          <div className="flex items-center justify-between text-sm mt-1">
+            <span className="text-gray-600">Active users worldwide:</span>
+            <span className="font-bold text-blue-600">1,247 online</span>
           </div>
         </div>
       </div>
