@@ -190,22 +190,72 @@ const NewOrderForm = () => {
     ],
     youtube: [
       { 
-        id: 6, 
-        name: 'YouTube Subscribers [Real]', 
-        rate: 25.00, 
+        id: 18, 
+        name: 'YouTube » Subscribers [No Refill]', 
+        rate: 15.00, 
         min: 50, 
         max: 10000, 
-        description: 'Real YouTube Subscribers',
+        description: 'YouTube Subscribers - No Refill Guarantee',
+        speed: 'Slow (24-72 hours)',
+        retention: 'No Refill'
+      },
+      { 
+        id: 19, 
+        name: 'YouTube » Subscribers [Guaranteed]', 
+        rate: 25.00, 
+        min: 50, 
+        max: 5000, 
+        description: 'YouTube Subscribers with Lifetime Guarantee',
+        speed: 'Slow (24-72 hours)',
+        retention: 'Lifetime Refill'
+      },
+      { 
+        id: 20, 
+        name: 'YouTube » Short/Video Views', 
+        rate: 2.50, 
+        min: 1000, 
+        max: 1000000, 
+        description: 'YouTube Shorts and Video Views - High Quality',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 21, 
+        name: 'YouTube » Likes', 
+        rate: 8.00, 
+        min: 100, 
+        max: 100000, 
+        description: 'YouTube Video Likes from Real Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 22, 
+        name: 'YouTube » Comments', 
+        rate: 20.00, 
+        min: 10, 
+        max: 5000, 
+        description: 'Custom YouTube Comments from Real Users',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 23, 
+        name: 'YouTube » Watch-Time', 
+        rate: 12.00, 
+        min: 100, 
+        max: 50000, 
+        description: 'YouTube Watch Time Hours - Boost Monetization',
         speed: 'Slow (24-72 hours)',
         retention: '365 Days Refill'
       },
       { 
-        id: 7, 
-        name: 'YouTube Views [High Retention]', 
-        rate: 3.50, 
-        min: 1000, 
-        max: 1000000, 
-        description: 'High Retention YouTube Views',
+        id: 24, 
+        name: 'YouTube » [Indian Services]', 
+        rate: 18.00, 
+        min: 50, 
+        max: 20000, 
+        description: 'YouTube Services from Indian Users Only',
         speed: 'Fast (1-6 hours)',
         retention: '365 Days Refill'
       }
