@@ -67,31 +67,65 @@ const AddFundsForm = () => {
             </div>
 
             {/* QR Code Section */}
-            <div className="bg-gray-50 rounded-lg p-6 mb-6 text-center">
-              <div className="w-48 h-48 mx-auto bg-white rounded-lg border-2 border-gray-200 flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <div className="text-6xl mb-2">📱</div>
-                  <p className="text-sm text-gray-600">QR Code Scanner</p>
-                  <p className="text-xs text-gray-500 mt-1">Scan with any UPI app</p>
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-6 mb-6 text-center border border-blue-200">
+              <div className="w-64 h-64 mx-auto bg-white rounded-lg border-2 border-blue-300 p-4 mb-4 shadow-lg">
+                <img 
+                  src="/payment-qr.png" 
+                  alt="Payment QR Code" 
+                  className="w-full h-full object-contain rounded-lg"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="w-full h-full hidden items-center justify-center text-center">
+                  <div>
+                    <div className="text-4xl mb-2">💳</div>
+                    <p className="text-sm text-gray-600">Paytm UPI QR</p>
+                    <p className="text-xs text-gray-500">Scan to pay</p>
+                  </div>
                 </div>
               </div>
               
-              <div className="space-y-2 text-sm">
-                <p><strong>UPI ID:</strong> payment@socialboost.com</p>
-                <p><strong>Amount:</strong> ₹{amount}</p>
-                <p className="text-purple-600 font-medium">Pay exactly ₹{amount}</p>
+              <div className="space-y-2 text-sm bg-white rounded-lg p-4 border border-blue-200">
+                <div className="flex items-center justify-center mb-2">
+                  <span className="text-blue-600 font-bold text-lg">Paytm</span>
+                  <span className="text-red-500 mx-1">❤️</span>
+                  <span className="text-green-600 font-bold">UPI</span>
+                </div>
+                <p><strong>UPI ID:</strong> <span className="text-blue-600 font-mono">pandey.shresth@ptyes</span></p>
+                <p><strong>Amount:</strong> <span className="text-green-600 font-bold">₹{amount}</span></p>
+                <p className="text-purple-600 font-medium bg-purple-50 px-3 py-1 rounded-full">Pay exactly ₹{amount}</p>
               </div>
             </div>
 
             {/* Payment Instructions */}
-            <div className="bg-blue-50 rounded-lg p-4 mb-6">
-              <h4 className="font-medium text-blue-900 mb-2">Payment Instructions:</h4>
-              <ul className="text-sm text-blue-800 space-y-1">
-                <li>1. Scan QR code with any UPI app (PhonePe, Paytm, GPay)</li>
-                <li>2. Pay exactly ₹{amount}</li>
-                <li>3. Copy the payment/transaction ID</li>
-                <li>4. Enter the ID below and submit</li>
-                <li>5. Amount will be added instantly after verification</li>
+            <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4 mb-6 border border-blue-200">
+              <h4 className="font-medium text-blue-900 mb-3 flex items-center">
+                <span className="text-lg mr-2">📋</span>
+                Payment Instructions:
+              </h4>
+              <ul className="text-sm text-blue-800 space-y-2">
+                <li className="flex items-start">
+                  <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                  Scan QR code with any UPI app (Paytm, PhonePe, GPay, etc.)
+                </li>
+                <li className="flex items-start">
+                  <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                  Pay exactly <strong>₹{amount}</strong> to <strong>pandey.shresth@ptyes</strong>
+                </li>
+                <li className="flex items-start">
+                  <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                  Copy the payment/transaction ID from your UPI app
+                </li>
+                <li className="flex items-start">
+                  <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">4</span>
+                  Enter the transaction ID below and submit
+                </li>
+                <li className="flex items-start">
+                  <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">✓</span>
+                  Amount will be added to your wallet after instant verification
+                </li>
               </ul>
             </div>
 
