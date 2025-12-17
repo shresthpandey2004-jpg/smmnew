@@ -259,6 +259,68 @@ const NewOrderForm = () => {
         speed: 'Fast (1-6 hours)',
         retention: '365 Days Refill'
       }
+    ],
+    facebook: [
+      { 
+        id: 25, 
+        name: 'Facebook » Followers', 
+        rate: 3.50, 
+        min: 100, 
+        max: 50000, 
+        description: 'High Quality Facebook Page Followers',
+        speed: 'Fast (1-6 hours)',
+        retention: '365 Days Refill'
+      },
+      { 
+        id: 26, 
+        name: 'Facebook » Likes', 
+        rate: 2.00, 
+        min: 50, 
+        max: 100000, 
+        description: 'Facebook Post Likes from Real Users',
+        speed: 'Fast (0-1 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 27, 
+        name: 'Facebook » Reel/Video Views', 
+        rate: 1.50, 
+        min: 1000, 
+        max: 1000000, 
+        description: 'Facebook Reel and Video Views - High Quality',
+        speed: 'Fast (0-1 hours)',
+        retention: '30 Days Refill'
+      },
+      { 
+        id: 28, 
+        name: 'Facebook » Others', 
+        rate: 4.00, 
+        min: 10, 
+        max: 10000, 
+        description: 'Facebook Other Services (Comments, Shares, etc.)',
+        speed: 'Fast (1-6 hours)',
+        retention: '90 Days Refill'
+      },
+      { 
+        id: 29, 
+        name: 'Facebook » Live Stream', 
+        rate: 20.00, 
+        min: 10, 
+        max: 1000, 
+        description: 'Facebook Live Stream Viewers',
+        speed: 'Instant',
+        retention: 'No Refill'
+      },
+      { 
+        id: 30, 
+        name: 'Facebook » Monetization Package', 
+        rate: 50.00, 
+        min: 1, 
+        max: 100, 
+        description: 'Complete Facebook Page Monetization Setup',
+        speed: 'Slow (24-72 hours)',
+        retention: 'Lifetime Guarantee'
+      }
     ]
   }
 
