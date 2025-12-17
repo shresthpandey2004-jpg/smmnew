@@ -942,7 +942,7 @@ const NewOrderForm = () => {
 
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [activeTab, setActiveTab] = useState('dashboard')
+  const [activeTab, setActiveTab] = useState('new-order')
 
   const sidebarItems = [
     { id: 'dashboard', name: 'Dashboard', icon: Home },
