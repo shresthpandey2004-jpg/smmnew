@@ -190,7 +190,7 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-blue-600 font-bold text-sm">��</spapan>
+                <span className="text-blue-600 font-bold text-sm">��</span>
               </div>
               <div>
                 <p className="font-medium text-blue-800">₹1,800 Added</p>
@@ -216,7 +216,7 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg border-l-4 border-orange-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-orange-600 font-bold text-sm">��</spspan>
+                <span className="text-orange-600 font-bold text-sm">��</span>
               </div>
               <div>
                 <p className="font-medium text-orange-800">₹3,200 Added</p>
@@ -229,7 +229,7 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-pink-50 rounded-lg border-l-4 border-pink-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
-                <span className="text-pink-600 font-bold text-sm">�🇳<s/span>
+                <span className="text-pink-600 font-bold text-sm">�🇳</span>
               </div>
               <div>
                 <p className="font-medium text-pink-800">₹1,500 Added</p>
@@ -242,7 +242,7 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-indigo-50 rounded-lg border-l-4 border-indigo-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center">
-                <span className="text-indigo-600 font-bold text-sm">��</spanan>
+                <span className="text-indigo-600 font-bold text-sm">��</span>
               </div>
               <div>
                 <p className="font-medium text-indigo-800">₹4,000 Added</p>
@@ -255,7 +255,7 @@ const AddFundsForm = () => {
           <div className="flex justify-between items-center p-3 bg-teal-50 rounded-lg border-l-4 border-teal-400">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-                <span className="text-teal-600 font-bold text-sm">��</span>n>
+                <span className="text-teal-600 font-bold text-sm">��</span>
               </div>
               <div>
                 <p className="font-medium text-teal-800">₹2,800 Added</p>
