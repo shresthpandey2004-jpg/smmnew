@@ -912,7 +912,7 @@ const NewOrderForm = ({ addOrder }) => {
   const selectedServiceData = selectedService ? findService(selectedService) : null
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
       {/* Order Form */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Place New Order</h2>
@@ -1378,7 +1378,7 @@ const Dashboard = () => {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-4 lg:p-6">
+        <main className="flex-1 px-4 lg:px-6 pt-2 pb-4">
           {renderDashboardContent()}
         </main>
       </div>
