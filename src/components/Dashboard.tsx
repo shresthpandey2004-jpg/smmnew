@@ -1211,6 +1211,92 @@ const OrderHistory = ({ orders }) => {
   )
 }
 
+const HelpSupport = () => {
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+  const [showSuccess, setShowSuccess] = useState(false)
+
+  const handleSubmit = () => {
+    if (!subject || !message) {
+      alert('Please fill in all fields')
+      return
+    }
+
+    // Show success message
+    setShowSuccess(true)
+    
+    // Reset form
+    setSubject('')
+    setMessage('')
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccess(false)
+    }, 5000)
+  }
+
+  return (
+    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Help & Support</h2>
+      
+      {!showSuccess ? (
+        <div className="max-w-2xl mx-auto">
+          <p className="text-gray-600 mb-6">
+            Need help? Raise a support ticket and our team will get back to you within 6 hours.
+          </p>
+
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+              <input 
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                placeholder="Enter your issue subject"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea 
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Describe your issue in detail..."
+                rows={6}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+              />
+            </div>
+
+            <button 
+              onClick={handleSubmit}
+              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium text-lg"
+            >
+              Raise Ticket
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="max-w-2xl mx-auto text-center py-12">
+          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <CheckCircle className="w-12 h-12 text-green-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Ticket Has Been Raised!</h3>
+          <p className="text-gray-600 text-lg mb-6">
+            Our support team will respond to your query within 6 hours.
+          </p>
+          <button 
+            onClick={() => setShowSuccess(false)}
+            className="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all"
+          >
+            Raise Another Ticket
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeTab, setActiveTab] = useState('new-order')
@@ -1267,6 +1353,11 @@ const Dashboard = () => {
       case 'add-funds':
         return (
           <AddFundsForm />
+        )
+      
+      case 'help':
+        return (
+          <HelpSupport />
         )
       
       default:
