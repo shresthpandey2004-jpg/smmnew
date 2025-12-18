@@ -302,6 +302,7 @@ const NewOrderForm = ({ addOrder }) => {
   const [quantity, setQuantity] = useState('')
   const [totalCost, setTotalCost] = useState(0)
   const [showSuccessPopup, setShowSuccessPopup] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
 
   const subcategories = {
     instagram: ['Followers', 'Likes', 'Views', 'Comments', 'Others'],
@@ -864,10 +865,8 @@ const NewOrderForm = ({ addOrder }) => {
       totalCost: totalCost.toFixed(2)
     }
 
-    addOrder(orderData)
-    
-    // Show success popup
-    setShowSuccessPopup(true)
+    // Show loading for 3 seconds
+    setIsProcessing(true)
     
     // Reset form
     setSelectedCategory('')
@@ -877,9 +876,16 @@ const NewOrderForm = ({ addOrder }) => {
     setQuantity('')
     setTotalCost(0)
     
-    // Hide popup after 3 seconds
+    // After 3 seconds, add order and show success popup
     setTimeout(() => {
-      setShowSuccessPopup(false)
+      addOrder(orderData)
+      setIsProcessing(false)
+      setShowSuccessPopup(true)
+      
+      // Hide success popup after 3 more seconds
+      setTimeout(() => {
+        setShowSuccessPopup(false)
+      }, 3000)
     }, 3000)
   }
 
@@ -1082,6 +1088,31 @@ const NewOrderForm = ({ addOrder }) => {
         </div>
       </div>
 
+      {/* Loading Popup */}
+      {isProcessing && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl transform animate-slideUp max-w-md mx-4">
+            <div className="text-center">
+              {/* Loading Spinner */}
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-10 h-10 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+              </div>
+              
+              {/* Loading Message */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Processing Your Order</h3>
+              <p className="text-gray-600 mb-4">Please wait while we process your request...</p>
+              
+              {/* Progress Bar */}
+              <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
+                <div className="bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full animate-pulse" style={{width: '100%', animation: 'progress 3s ease-in-out'}}></div>
+              </div>
+              
+              <p className="text-sm text-gray-500">This may take a few seconds...</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Success Popup */}
       {showSuccessPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 animate-fadeIn">
@@ -1093,24 +1124,8 @@ const NewOrderForm = ({ addOrder }) => {
               </div>
               
               {/* Success Message */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Order Placed Successfully!</h3>
-              <p className="text-gray-600 mb-4">Your order has been submitted and is being processed.</p>
-              
-              {/* Order Details */}
-              <div className="bg-gray-50 rounded-lg p-4 mb-6">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm text-gray-600">Service:</span>
-                  <span className="text-sm font-medium text-gray-900">{selectedService}</span>
-                </div>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm text-gray-600">Quantity:</span>
-                  <span className="text-sm font-medium text-gray-900">{quantity}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-600">Total Cost:</span>
-                  <span className="text-sm font-bold text-green-600">₹{totalCost.toFixed(2)}</span>
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Order is Being Placed!</h3>
+              <p className="text-gray-600 mb-6">Your order has been successfully submitted.</p>
               
               {/* Action Buttons */}
               <div className="flex space-x-3">
