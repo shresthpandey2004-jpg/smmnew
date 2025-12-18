@@ -301,6 +301,7 @@ const NewOrderForm = ({ addOrder }) => {
   const [link, setLink] = useState('')
   const [quantity, setQuantity] = useState('')
   const [totalCost, setTotalCost] = useState(0)
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false)
 
   const subcategories = {
     instagram: ['Followers', 'Likes', 'Views', 'Comments', 'Others'],
@@ -865,6 +866,9 @@ const NewOrderForm = ({ addOrder }) => {
 
     addOrder(orderData)
     
+    // Show success popup
+    setShowSuccessPopup(true)
+    
     // Reset form
     setSelectedCategory('')
     setSelectedSubcategory('')
@@ -873,7 +877,10 @@ const NewOrderForm = ({ addOrder }) => {
     setQuantity('')
     setTotalCost(0)
     
-    alert('Order placed successfully! Check Order History to view your order.')
+    // Hide popup after 3 seconds
+    setTimeout(() => {
+      setShowSuccessPopup(false)
+    }, 3000)
   }
 
   const handleQuantityChange = (value: string) => {
@@ -1074,6 +1081,59 @@ const NewOrderForm = ({ addOrder }) => {
           </div>
         </div>
       </div>
+
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 animate-fadeIn">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl transform animate-slideUp max-w-md mx-4">
+            <div className="text-center">
+              {/* Success Icon */}
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+                <CheckCircle className="w-12 h-12 text-green-500" />
+              </div>
+              
+              {/* Success Message */}
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Order Placed Successfully!</h3>
+              <p className="text-gray-600 mb-4">Your order has been submitted and is being processed.</p>
+              
+              {/* Order Details */}
+              <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-600">Service:</span>
+                  <span className="text-sm font-medium text-gray-900">{selectedService}</span>
+                </div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm text-gray-600">Quantity:</span>
+                  <span className="text-sm font-medium text-gray-900">{quantity}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-600">Total Cost:</span>
+                  <span className="text-sm font-bold text-green-600">₹{totalCost.toFixed(2)}</span>
+                </div>
+              </div>
+              
+              {/* Action Buttons */}
+              <div className="flex space-x-3">
+                <button 
+                  onClick={() => setShowSuccessPopup(false)}
+                  className="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                >
+                  Close
+                </button>
+                <button 
+                  onClick={() => {
+                    setShowSuccessPopup(false)
+                    // You can add navigation to order history here
+                  }}
+                  className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all"
+                >
+                  View Orders
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
