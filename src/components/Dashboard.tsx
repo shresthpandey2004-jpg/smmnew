@@ -1127,22 +1127,13 @@ const NewOrderForm = ({ addOrder }) => {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Order is Being Placed!</h3>
               <p className="text-gray-600 mb-6">Your order has been successfully submitted.</p>
               
-              {/* Action Buttons */}
-              <div className="flex space-x-3">
+              {/* Action Button */}
+              <div className="flex justify-center">
                 <button 
                   onClick={() => setShowSuccessPopup(false)}
-                  className="flex-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                  className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium"
                 >
                   Close
-                </button>
-                <button 
-                  onClick={() => {
-                    setShowSuccessPopup(false)
-                    // You can add navigation to order history here
-                  }}
-                  className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all"
-                >
-                  View Orders
                 </button>
               </div>
             </div>
