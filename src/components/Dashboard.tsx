@@ -6,7 +6,7 @@ import {
   Clock, CheckCircle, AlertCircle, RefreshCw
 } from 'lucide-react'
 
-const AddFundsForm = () => {
+const AddFundsForm = ({ walletBalance, setWalletBalance }) => {
   const [amount, setAmount] = useState('')
   const [paymentId, setPaymentId] = useState('')
   const [showPaymentForm, setShowPaymentForm] = useState(false)
@@ -22,7 +22,13 @@ const AddFundsForm = () => {
 
   const handlePaymentSubmit = () => {
     if (paymentId.trim()) {
-      alert('Payment submitted for verification! Your amount will be added to your account after instant verification.')
+      // Add funds to wallet
+      const addAmount = parseFloat(amount)
+      const newBalance = walletBalance + addAmount
+      setWalletBalance(newBalance)
+      localStorage.setItem('walletBalance', newBalance.toString())
+      
+      alert('Payment verified! ₹' + amount + ' has been added to your wallet.')
       setAmount('')
       setPaymentId('')
       setShowPaymentForm(false)
@@ -294,7 +300,7 @@ const AddFundsForm = () => {
   )
 }
 
-const NewOrderForm = ({ addOrder }) => {
+const NewOrderForm = ({ addOrder, walletBalance }) => {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [selectedSubcategory, setSelectedSubcategory] = useState('')
   const [selectedService, setSelectedService] = useState('')
@@ -856,6 +862,12 @@ const NewOrderForm = ({ addOrder }) => {
     const service = findService(selectedService)
     if (!service) return
 
+    // Check wallet balance before processing
+    if (walletBalance < totalCost) {
+      alert(`Insufficient funds! You need ₹${totalCost.toFixed(2)} but have ₹${walletBalance.toFixed(2)}. Please add funds to your wallet.`)
+      return
+    }
+
     const orderData = {
       service: service.name,
       category: selectedCategory,
@@ -878,9 +890,14 @@ const NewOrderForm = ({ addOrder }) => {
     
     // After 3 seconds, add order and show success popup
     setTimeout(() => {
-      addOrder(orderData)
+      const orderSuccess = addOrder(orderData)
       setIsProcessing(false)
-      setShowSuccessPopup(true)
+      
+      if (orderSuccess) {
+        setShowSuccessPopup(true)
+      } else {
+        alert('Order failed due to insufficient funds!')
+      }
       
       // Hide success popup after 3 more seconds
       setTimeout(() => {
@@ -915,7 +932,13 @@ const NewOrderForm = ({ addOrder }) => {
     <div>
       {/* Order Form */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 -mt-2">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Place New Order</h2>
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-gray-900">Place New Order</h2>
+          <div className="bg-green-50 px-4 py-2 rounded-lg border border-green-200">
+            <span className="text-sm text-green-600 font-medium">Wallet Balance: </span>
+            <span className="text-lg font-bold text-green-700">₹{walletBalance.toFixed(2)}</span>
+          </div>
+        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Form Fields */}
@@ -1309,8 +1332,20 @@ const Dashboard = () => {
     const savedOrders = localStorage.getItem('userOrders')
     return savedOrders ? JSON.parse(savedOrders) : []
   })
+  
+  const [walletBalance, setWalletBalance] = useState(() => {
+    const savedBalance = localStorage.getItem('walletBalance')
+    return savedBalance ? parseFloat(savedBalance) : 0
+  })
 
   const addOrder = (orderData) => {
+    const orderCost = parseFloat(orderData.totalCost)
+    
+    // Check if sufficient funds
+    if (walletBalance < orderCost) {
+      return false // Insufficient funds
+    }
+    
     const newOrder = {
       id: Date.now().toString(),
       ...orderData,
@@ -1319,9 +1354,16 @@ const Dashboard = () => {
       amount: `₹${orderData.totalCost}`
     }
     
+    // Deduct funds from wallet
+    const newBalance = walletBalance - orderCost
+    setWalletBalance(newBalance)
+    localStorage.setItem('walletBalance', newBalance.toString())
+    
     const updatedOrders = [newOrder, ...orders]
     setOrders(updatedOrders)
     localStorage.setItem('userOrders', JSON.stringify(updatedOrders))
+    
+    return true // Order successful
   }
 
   const sidebarItems = [
@@ -1342,7 +1384,7 @@ const Dashboard = () => {
     switch (activeTab) {
       case 'new-order':
         return (
-          <NewOrderForm addOrder={addOrder} />
+          <NewOrderForm addOrder={addOrder} walletBalance={walletBalance} />
         )
       
       case 'order-history':
@@ -1352,7 +1394,7 @@ const Dashboard = () => {
       
       case 'add-funds':
         return (
-          <AddFundsForm />
+          <AddFundsForm walletBalance={walletBalance} setWalletBalance={setWalletBalance} />
         )
       
       case 'help':
